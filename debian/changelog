@@ -1,3 +1,11 @@
+eid-archive (2014.4) meta; urgency=low
+
+  * Add detection code in postinst to figure out which distribution
+    we're actually using. If the user isn't running a supported
+    distribution, we shouldn't necessarily fail on them.
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Wed, 18 Jun 2014 10:45:21 +0200
+
 eid-archive (2014.3) meta; urgency=low
 
   * Remove superfluous mktemp call
