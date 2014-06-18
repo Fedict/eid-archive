@@ -1,0 +1,42 @@
+#!/bin/bash
+
+set -e
+
+if [ ! -f /etc/apt/sources.list.d/eid.list ]
+then
+	REL=$(lsb_release -c -s)
+	if [ "$REL" != "wheezy" -o "$REL" != "precise" -o "$REL" != "maya" -o "$REL" != "trusty" ]
+	then
+		echo -e "WARNING: Unsupported distribution found. Please see the website at\nhttp://eid.belgium.be/en/using_your_eid/installing_the_eid_software/linux/ for a list of supported distributions."
+		if [ ! -x "$(which dpkg-vendor)" ]
+		then
+			echo "distribution too old, cannot continue"
+			exit 1
+		fi
+		if dpkg-vendor --is debian
+		then
+			REL=wheezy
+			echo "Running on Debian, guessing wheezy will work"
+		else
+			if dpkg-vendor --derives-from ubuntu
+			then
+				REL=precise
+				echo "Running on Ubuntu or a derivative, guessing precise will work"
+			else
+				REL=wheezy
+				echo "Distribution unknown, using wheezy binaries as fallback"
+			fi
+		fi
+	fi
+	sed -e "s/@DIST@/${REL}/g" /usr/share/eid-archive/eid.list > /etc/apt/sources.list.d/eid.list
+fi
+
+ln -sf /usr/share/eid-archive/keys/6773d225.gpg /etc/apt/trusted.gpg.d/eid-archive-released-builds.gpg
+if grep '^[[:space:]]*deb.*continuous' /etc/apt/sources.list.d/eid.list >/dev/null 2>&1
+then
+	ln -sf /usr/share/eid-archive/keys/10a04d46.gpg /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
+else
+	rm -f /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
+fi
+
+#DEBHELPER#

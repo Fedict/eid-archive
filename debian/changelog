@@ -1,0 +1,19 @@
+eid-archive (2014.3) meta; urgency=low
+
+  * Remove superfluous mktemp call
+  * Add missing dependency on lsb-release
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Thu, 12 Jun 2014 14:36:10 +0200
+
+eid-archive (2014.2) meta; urgency=low
+
+  * Move URL to files.eid.belgium.be (from dist.eid.belgium.be, which is used
+    for single-download and should not be disturbed while we test)
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Thu, 12 Jun 2014 14:15:20 +0200
+
+eid-archive (2014.1) meta; urgency=low
+
+  * Initial release.
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Wed, 28 May 2014 18:17:19 +0200

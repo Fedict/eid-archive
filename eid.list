@@ -1,0 +1,11 @@
+# To enable the testing repository, uncomment the below line and run
+# "dpkg-reconfigure eid-archive" to enable the archive key.
+#
+# WARNING WARNING WARNING
+# The testing repository contains untested and unsupported prerelease
+# packages. Use at your own risk!
+# WARNING WARNING WARNING
+# deb http://files.eid.belgium.be/debian continuous/@DIST@ main
+
+# The regular repository with released packages.
+deb http://files.eid.belgium.be/debian @DIST@ main

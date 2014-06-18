@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+%: 
+	dh $@
+
+override_dh_install: 10a04d46.gpg 6773d225.gpg
+	dh_install
+
+override_dh_auto_clean:
+	rm -f 10a04d46.gpg 6773d225.gpg
+	dh_auto_clean
+
+%.gpg: %.asc
+	gpg --dearmor < $< > $@

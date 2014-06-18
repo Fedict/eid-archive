@@ -1,0 +1,13 @@
+[beid-release]
+name=Belgian eID package archive
+baseurl=http://files.eid.belgium.be/rpm/fedora/$releasever/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
+
+[beid-continuous]
+name=Belgian eID package archive - unsupported prerelease builds
+baseurl=http://files.eid.belgium.be/rpm/continuous/fedora/$releasever/$basearch
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS
