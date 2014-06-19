@@ -1,0 +1,5 @@
+*.gpg
+debian/*.debhelper.log
+debian/files
+debian/eid-archive
+debian/*.substvars
