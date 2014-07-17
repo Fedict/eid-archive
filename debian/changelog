@@ -1,8 +1,16 @@
+eid-archive (2014.5) meta; urgency=low
+
+  * Brown paperbag release.
+  * Fix postinst, and don't forget to call "ucf --purge" when appropriate
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Wed, 25 Jun 2014 13:37:34 +0200
+
 eid-archive (2014.4) meta; urgency=low
 
   * Add detection code in postinst to figure out which distribution
     we're actually using. If the user isn't running a supported
     distribution, we shouldn't necessarily fail on them.
+  * Use ucf to manage the .list file
 
  -- Wouter Verhelst <wouter.verhelst@fedict.be>  Wed, 18 Jun 2014 10:45:21 +0200
 

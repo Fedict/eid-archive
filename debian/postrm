@@ -4,6 +4,10 @@ set -e
 
 case "$1" in
 	purge)
+		if [ -x /usr/bin/ucf ]
+		then
+			ucf --purge /etc/apt/sources.list.d/eid.list
+		fi
 		rm -f /etc/apt/sources.list.d/eid.list
 		rm -f /etc/apt/trusted.gpg.d/eid-archive*
 	;;

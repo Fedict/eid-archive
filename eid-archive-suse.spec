@@ -6,7 +6,7 @@ Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 URL: http://eid.belgium.be/
 Source0: http://eid.belgium.be/10a04d46.asc
 Source1: http://eid.belgium.be/6773d225.asc
-Source2: eid-archive-el.repo
+Source2: eid-archive-suse.repo
 License: GPL
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -34,6 +34,15 @@ install -pm 644 %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/zypp/repos.d/eid-archiv
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+#!/bin/bash
+
+set -e
+
+rpmkeys --import /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
+
+echo "The key for the eID archive has been installed."
 
 %files
 %defattr(-,root,root,-)

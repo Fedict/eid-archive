@@ -1,6 +1,6 @@
 Name: eid-archive-fedora
 Version: 2014
-Release: 1
+Release: 2
 Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 
 URL: http://eid.belgium.be/
@@ -35,11 +35,22 @@ install -pm 644 %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/yum.repos.d/eid-archive
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+#!/bin/bash
+
+set -e
+
+rpmkeys --import /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
+
+echo "The key for the eID archive has been installed."
+
 %files
 %defattr(-,root,root,-)
 %config(noreplace) /etc/yum.repos.d/*
 /etc/pki/rpm-gpg/*
 
 %changelog
+* Thu Jul 17 2014 <wouter.verhelst@fedict.be> - 2014-2
+- Install the GPG keys from the postinst script (with appropriate message).
 * Thu Jun 12 2014 <wouter.verhelst@fedict.be> - 2014-1
 - Create, with inspiration from the epel-release package

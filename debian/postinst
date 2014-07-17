@@ -2,34 +2,76 @@
 
 set -e
 
-if [ ! -f /etc/apt/sources.list.d/eid.list ]
-then
-	REL=$(lsb_release -c -s)
-	if [ "$REL" != "wheezy" -o "$REL" != "precise" -o "$REL" != "maya" -o "$REL" != "trusty" ]
-	then
-		echo -e "WARNING: Unsupported distribution found. Please see the website at\nhttp://eid.belgium.be/en/using_your_eid/installing_the_eid_software/linux/ for a list of supported distributions."
-		if [ ! -x "$(which dpkg-vendor)" ]
-		then
-			echo "distribution too old, cannot continue"
-			exit 1
-		fi
-		if dpkg-vendor --is debian
-		then
-			REL=wheezy
-			echo "Running on Debian, guessing wheezy will work"
-		else
-			if dpkg-vendor --derives-from ubuntu
-			then
-				REL=precise
-				echo "Running on Ubuntu or a derivative, guessing precise will work"
-			else
-				REL=wheezy
-				echo "Distribution unknown, using wheezy binaries as fallback"
-			fi
-		fi
-	fi
-	sed -e "s/@DIST@/${REL}/g" /usr/share/eid-archive/eid.list > /etc/apt/sources.list.d/eid.list
-fi
+CODE=$(lsb_release -c -s)
+DIST=$(lsb_release -i -s)
+REL=$(lsb_release -r -s)
+DIR=$(mktemp -d)
+
+too_old() {
+	echo "distribution too old, cannot continue. Please upgrade, or compile from source."
+	exit 1
+}
+
+case "$CODE" in
+	wheezy)
+		:
+	;;
+	precise)
+		:
+	;;
+	maya)
+		:
+	;;
+	trusty)
+		:
+	;;
+	qiana)
+		:
+	;;
+	*)
+		echo -e "WARNING: Unsupported distribution found. Please see the website at\nhttp://eid.belgium.be/en/using_your_eid/installing_the_eid_software/linux\nfor a list of supported distributions."
+		case "$DIST" in
+			LinuxMint)
+				if dpkg --compare-versions 17 ge $REL
+				then
+					CODE=qiana
+				else
+					if dpkg --compare-versions 13 ge $REL
+					then
+						CODE=maya
+					else
+						too_old
+					fi
+				fi
+				echo "Found Linux Mint $REL, using $CODE"
+			;;
+			Ubuntu)
+				if dpkg --compare-versions 12.04 ge $REL
+				then
+					CODE=precise
+				else
+					if dpkg --compare-versions 14.04 ge $REL
+					then
+						CODE=trusty
+					else
+						too_old
+					fi
+				fi
+				echo "Found Ubuntu $REL, using $CODE"
+			;;
+			Debian)
+				CODE=wheezy
+				echo "Found Debian $REL, using $CODE"
+			;;
+			*)
+				CODE=wheezy
+				echo "Unknown distribution found. Using wheezy as fallback."
+			;;
+		esac
+	;;
+esac
+sed -e "s/@DIST@/${CODE}/g" /usr/share/eid-archive/eid.list > $DIR/eid.list
+ucf $DIR/eid.list /etc/apt/sources.list.d/eid.list
 
 ln -sf /usr/share/eid-archive/keys/6773d225.gpg /etc/apt/trusted.gpg.d/eid-archive-released-builds.gpg
 if grep '^[[:space:]]*deb.*continuous' /etc/apt/sources.list.d/eid.list >/dev/null 2>&1
