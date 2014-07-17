@@ -43,6 +43,7 @@ set -e
 rpmkeys --import /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
 
 echo "The key for the eID archive has been installed."
+echo "Now run 'yum install eid-mw eid-viewer' to install the middleware and the viewer, respectively."
 
 %files
 %defattr(-,root,root,-)
@@ -52,5 +53,6 @@ echo "The key for the eID archive has been installed."
 %changelog
 * Thu Jul 17 2014 <wouter.verhelst@fedict.be> - 2014-2
 - Install the GPG keys from the postinst script (with appropriate message).
+- Output a message to notify the user that this is only the first step.
 * Thu Jun 12 2014 <wouter.verhelst@fedict.be> - 2014-1
 - Create, with inspiration from the epel-release package

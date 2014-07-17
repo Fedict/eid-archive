@@ -81,4 +81,6 @@ else
 	rm -f /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
 fi
 
+echo "Repository enabled, keys installed. Please run \"apt-get update\" followed by\n\"apt-get install eid-mw eid-viewer\" to install the middleware and the viewer, respecively."
+
 #DEBHELPER#
