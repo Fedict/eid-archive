@@ -3,6 +3,7 @@ Section: misc
 Maintainer: Wouter Verhelst <wouter.verhelst@fedict.be>
 Build-Depends: debhelper (>= 9)
 Priority: extra
+Standards-Version: 3.9.5
 
 Package: eid-archive
 Architecture: all
