@@ -1,3 +1,9 @@
+eid-archive (2014.7) meta; urgency=low
+
+  * Add utopic to supported releases
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Thu, 23 Oct 2014 10:01:16 +0200
+
 eid-archive (2014.6) meta; urgency=low
 
   * Produce a message in postinst which instructs to install the eid-mw

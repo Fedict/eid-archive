@@ -1,6 +1,6 @@
 Name: eid-archive-suse
 Version: 2014
-Release: 2
+Release: 3
 Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 
 URL: http://eid.belgium.be/
@@ -51,6 +51,8 @@ echo "Now run 'zypper install eid-mw eid-viewer' to install the middleware and t
 /etc/pki/rpm-gpg/*
 
 %changelog
+* Wed Nov 05 2014 <wouter.verhelst@fedict.be> - 2014-3
+- Use $releasever to select the release, rather than hardcoding it.
 * Thu Jul 17 2014 <wouter.verhelst@fedict.be> - 2014-2
 - Install the GPG keys from the postinst script (with appropriate message).
 - Output a message to notify the user that this is only the first step.
