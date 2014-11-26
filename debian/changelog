@@ -1,3 +1,9 @@
+eid-archive (2014.8) meta; urgency=low
+
+  * Fix logic reversal in postinst
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Wed, 26 Nov 2014 10:47:50 +0100
+
 eid-archive (2014.7) meta; urgency=low
 
   * Add utopic to supported releases

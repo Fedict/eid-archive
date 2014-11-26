@@ -35,11 +35,11 @@ case "$CODE" in
 		echo -e "WARNING: Unsupported distribution found. Please see the website at\nhttp://eid.belgium.be/en/using_your_eid/installing_the_eid_software/linux\nfor a list of supported distributions."
 		case "$DIST" in
 			LinuxMint)
-				if dpkg --compare-versions 17 ge $REL
+				if dpkg --compare-versions 17 le $REL
 				then
 					CODE=qiana
 				else
-					if dpkg --compare-versions 13 ge $REL
+					if dpkg --compare-versions 13 le $REL
 					then
 						CODE=maya
 					else
@@ -49,11 +49,11 @@ case "$CODE" in
 				echo "Found Linux Mint $REL, using $CODE"
 			;;
 			Ubuntu)
-				if dpkg --compare-versions 12.04 ge $REL
+				if dpkg --compare-versions 12.04 le $REL
 				then
 					CODE=precise
 				else
-					if dpkg --compare-versions 14.04 ge $REL
+					if dpkg --compare-versions 14.04 le $REL
 					then
 						CODE=trusty
 					else
