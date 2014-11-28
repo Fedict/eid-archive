@@ -1,3 +1,9 @@
+eid-archive (2014.9) UNRELEASED; urgency=low
+
+  * Fix message about installing packages in postinst: use "echo -e", fix typo.
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Fri, 28 Nov 2014 10:48:11 +0100
+
 eid-archive (2014.8) meta; urgency=low
 
   * Fix logic reversal in postinst
