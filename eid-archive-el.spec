@@ -1,6 +1,6 @@
 Name: eid-archive-el
-Version: 2014
-Release: 4
+Version: 2015
+Release: 1
 Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 
 URL: http://eid.belgium.be/
@@ -51,6 +51,9 @@ echo "Now run 'yum install eid-mw eid-viewer' to install the middleware and the 
 /etc/pki/rpm-gpg/*
 
 %changelog
+* Fri Jan 30 2015 <wouter.verhelst@fedict.be> - 2015-1
+- Rebuild to remove eid-archive-el.repo artifact from rpmbuild directory,
+  analoguously to the eid-archive-fedora one
 * Wed Aug 20 2014 <wouter.verhelst@fedict.be> - 2014-4
 - Update link to main archive as well, now. We'll leave the old layout
   functional for now, so that upgrades continue working.
