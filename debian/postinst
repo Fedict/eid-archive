@@ -16,6 +16,9 @@ case "$CODE" in
 	wheezy)
 		:
 	;;
+	jessie)
+		:
+	;;
 	precise)
 		:
 	;;
@@ -29,6 +32,9 @@ case "$CODE" in
 		:
 	;;
 	utopic)
+		:
+	;;
+	vivid)
 		:
 	;;
 	*)
