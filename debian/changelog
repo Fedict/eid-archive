@@ -1,3 +1,10 @@
+eid-archive (2015.2) meta; urgency=medium
+
+  * Don't list the continuous repository anymore, but list the candidate one
+    instead.
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Tue, 28 Apr 2015 17:44:24 +0200
+
 eid-archive (2015.1) meta; urgency=low
 
   * Fix message about installing packages in postinst: use "echo -e", fix typo.

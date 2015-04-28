@@ -1,11 +1,20 @@
 # To enable the testing repository, uncomment the below line and run
 # "dpkg-reconfigure eid-archive" to enable the archive key.
 #
-# WARNING WARNING WARNING
-# The testing repository contains untested and unsupported prerelease
-# packages. Use at your own risk!
-# WARNING WARNING WARNING
-# deb http://files.eid.belgium.be/debian continuous/@DIST@ main
+# The candidate repository contains unsupported prerelease packages. Use at
+# your own risk.
+#
+# Note, however, that the candidate repository is usually empty; it is
+# used when we're preparing (and testing) a new release. Therefore, it
+# should be relatively safe.
+#
+# There is also another "continuous" repository, for which packages get
+# recompiled for each and every change to the source. This isn't listed
+# (so that it can't be accidentally enabled), but the configuration is
+# the same as the below, with "candidate" replaced by "continuous".
+#
+# deb http://files.eid.belgium.be/debian candidate/@DIST@ main
 
-# The regular repository with released packages.
+# The regular repository with released packages. This is what you should
+# use.
 deb http://files.eid.belgium.be/debian @DIST@ main
