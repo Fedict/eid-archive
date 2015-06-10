@@ -35,22 +35,15 @@ install -pm 644 %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/zypp/repos.d/eid-archiv
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-#!/bin/bash
-
-set -e
-
-rpmkeys --import /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
-
-echo "The key for the eID archive has been installed."
-echo "Now run 'zypper install eid-mw eid-viewer' to install the middleware and the viewer, respectively."
-
 %files
 %defattr(-,root,root,-)
 %config(noreplace) /etc/zypp/repos.d/*
 /etc/pki/rpm-gpg/*
 
 %changelog
+* Wed Jun 10 2015 <wouter.verhelst@fedict.be> - 2015-2
+- Remove %post scriptlet, it doesn't work; you can't install a GPG key while
+  the RPM lock is held.
 * Wed Nov 05 2014 <wouter.verhelst@fedict.be> - 2014-3
 - Use $releasever to select the release, rather than hardcoding it.
 * Thu Jul 17 2014 <wouter.verhelst@fedict.be> - 2014-2

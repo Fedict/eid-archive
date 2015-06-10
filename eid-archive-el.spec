@@ -35,22 +35,15 @@ install -pm 644 %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/yum.repos.d/eid-archive
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-#!/bin/bash
-
-set -e
-
-rpmkeys --import /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
-
-echo "The key for the eID archive has been installed."
-echo "Now run 'yum install eid-mw eid-viewer' to install the middleware and the viewer, respectively."
-
 %files
 %defattr(-,root,root,-)
 %config(noreplace) /etc/yum.repos.d/*
 /etc/pki/rpm-gpg/*
 
 %changelog
+* Wed Jun 10 2015 <wouter.verhelst@fedict.be> - 2015-2
+- Remove %post scriptlet, it doesn't work; you can't install a GPG key while
+  the RPM lock is held.
 * Fri Jan 30 2015 <wouter.verhelst@fedict.be> - 2015-1
 - Rebuild to remove eid-archive-el.repo artifact from rpmbuild directory,
   analoguously to the eid-archive-fedora one
