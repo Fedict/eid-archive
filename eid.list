@@ -1,5 +1,6 @@
-# To enable the testing repository, uncomment the below line and run
-# "dpkg-reconfigure eid-archive" to enable the archive key.
+# To enable the candidate repository, uncomment the below line, put "deb" in
+# front of it, and run "dpkg-reconfigure eid-archive" to enable the archive
+# key.
 #
 # The candidate repository contains unsupported prerelease packages. Use at
 # your own risk.
@@ -13,7 +14,7 @@
 # (so that it can't be accidentally enabled), but the configuration is
 # the same as the below, with "candidate" replaced by "continuous".
 #
-# deb http://files.eid.belgium.be/debian candidate/@DIST@ main
+# http://files.eid.belgium.be/debian candidate/@DIST@ main
 
 # The regular repository with released packages. This is what you should
 # use.

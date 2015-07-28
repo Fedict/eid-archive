@@ -1,7 +1,9 @@
 eid-archive (2015.2) meta; urgency=medium
 
-  * Don't list the continuous repository anymore, but list the candidate one
-    instead.
+  * Don't list the continuous repository anymore, but list the candidate
+    one instead. List it as a URL rather than a functional "deb" URI,
+    too, so that GUI tools don't pick it up without showing the
+    accompanying comments, causing confusion.
 
  -- Wouter Verhelst <wouter.verhelst@fedict.be>  Tue, 28 Apr 2015 17:44:24 +0200
 
