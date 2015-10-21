@@ -1,3 +1,18 @@
+eid-archive (2015.4) UNRELEASED; urgency=medium
+
+  * Support Ubuntu 15.10 "Wily Werewolf"
+  * Drop support for Ubuntu 14.10 "Utopic Unicorn"
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Wed, 21 Oct 2015 13:09:56 +0200
+
+eid-archive (2015.3) meta; urgency=medium
+
+  * Grep for "candidate" as well as "continuous" in the postinst, so that the
+    testing key is added for the candidate repository as well.
+  * Debian unstable: use the jessie archive rather than the wheezy one.
+
+ -- Wouter Verhelst <wouter.verhelst@fedict.be>  Thu, 30 Jul 2015 12:02:48 +0200
+
 eid-archive (2015.2) meta; urgency=medium
 
   * Don't list the continuous repository anymore, but list the candidate

@@ -31,10 +31,7 @@ case "$CODE" in
 	qiana)
 		:
 	;;
-	utopic)
-		:
-	;;
-	vivid)
+	wily)
 		:
 	;;
 	*)
@@ -55,13 +52,13 @@ case "$CODE" in
 				echo "Found Linux Mint $REL, using $CODE"
 			;;
 			Ubuntu)
-				if dpkg --compare-versions 12.04 le $REL
+				if dpkg --compare-versions 14.04 le $REL
 				then
-					CODE=precise
+					CODE=trusty
 				else
-					if dpkg --compare-versions 14.04 le $REL
+					if dpkg --compare-versions 12.04 le $REL
 					then
-						CODE=trusty
+						CODE=precise
 					else
 						too_old
 					fi
@@ -70,6 +67,9 @@ case "$CODE" in
 			;;
 			Debian)
 				CODE=wheezy
+				if [ "$REL" = "unstable" ]; then
+					CODE=jessie
+				fi
 				echo "Found Debian $REL, using $CODE"
 			;;
 			*)
@@ -83,7 +83,7 @@ sed -e "s/@DIST@/${CODE}/g" /usr/share/eid-archive/eid.list > $DIR/eid.list
 ucf $DIR/eid.list /etc/apt/sources.list.d/eid.list
 
 ln -sf /usr/share/eid-archive/keys/6773d225.gpg /etc/apt/trusted.gpg.d/eid-archive-released-builds.gpg
-if grep '^[[:space:]]*deb.*continuous' /etc/apt/sources.list.d/eid.list >/dev/null 2>&1
+if grep -E '^[[:space:]]*deb.*(continuous|candidate)' /etc/apt/sources.list.d/eid.list >/dev/null 2>&1
 then
 	ln -sf /usr/share/eid-archive/keys/10a04d46.gpg /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
 else
