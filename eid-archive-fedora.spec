@@ -41,6 +41,8 @@ rm -rf $RPM_BUILD_ROOT
 /etc/pki/rpm-gpg/*
 
 %changelog
+* Fri Oct 23 2015 <wouter.verhelst@fedict.be> - 2015-3
+- Add the candidate repository
 * Wed Jun 10 2015 <wouter.verhelst@fedict.be> - 2015-2
 - Remove %post scriptlet, it doesn't work; you can't install a GPG key while
   the RPM lock is held.
