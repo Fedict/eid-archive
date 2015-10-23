@@ -1,7 +1,8 @@
-eid-archive (2015.4) UNRELEASED; urgency=medium
+eid-archive (2015.4) meta; urgency=medium
 
   * Support Ubuntu 15.10 "Wily Werewolf"
-  * Drop support for Ubuntu 14.10 "Utopic Unicorn"
+  * Drop support for Ubuntu 14.10 "Utopic Unicorn" and Ubuntu 15.04
+    "Vivid Vervet".
 
  -- Wouter Verhelst <wouter.verhelst@fedict.be>  Wed, 21 Oct 2015 13:09:56 +0200
 
