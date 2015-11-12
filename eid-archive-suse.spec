@@ -1,5 +1,5 @@
 Name: eid-archive-suse
-Version: 2014
+Version: 2015
 Release: 3
 Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 
