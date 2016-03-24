@@ -15,7 +15,10 @@
 # the same as the below, with "candidate" replaced by "continuous".
 #
 # http://files.eid.belgium.be/debian candidate/@DIST@ main
+# NOTE: files2.eid.belgium.be is a mirror for the main repository ONLY.
+# That is, it does not contain the continuous or candidate repositories.
 
 # The regular repository with released packages. This is what you should
 # use.
 deb http://files.eid.belgium.be/debian @DIST@ main
+deb http://files2.eid.belgium.be/debian @DIST@ main

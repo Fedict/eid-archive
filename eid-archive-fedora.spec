@@ -1,5 +1,5 @@
 Name: eid-archive-fedora
-Version: 2015
+Version: 2016
 Release: 1
 Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 
@@ -41,6 +41,8 @@ rm -rf $RPM_BUILD_ROOT
 /etc/pki/rpm-gpg/*
 
 %changelog
+* Thu Mar 24 2016 <wouter.verhelst@fedict.be> - 2016-1
+- Add the files2 mirror as a separate repository, to remove a SPOF
 * Fri Oct 23 2015 <wouter.verhelst@fedict.be> - 2015-3
 - Add the candidate repository
 * Wed Jun 10 2015 <wouter.verhelst@fedict.be> - 2015-2
