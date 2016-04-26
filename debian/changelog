@@ -1,3 +1,10 @@
+eid-archive (2016.2) meta; urgency=medium
+
+  * Support Ubuntu 16.04 "Xenial Xerus"
+  * Drop support for Ubuntu 12.04 "Precise Pangolin" and Ubuntu 15.10 "Wily Werewolf".
+
+ -- Wouter Verhelst <wouter@debian.org>  Tue, 26 Apr 2016 11:49:54 +0200
+
 eid-archive (2016.1) meta; urgency=medium
 
   * Add the files2 mirror as a separate repository, to remove a SPOF

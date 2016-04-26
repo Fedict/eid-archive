@@ -19,9 +19,6 @@ case "$CODE" in
 	jessie)
 		:
 	;;
-	precise)
-		:
-	;;
 	maya)
 		:
 	;;
@@ -31,7 +28,7 @@ case "$CODE" in
 	qiana)
 		:
 	;;
-	wily)
+	xenial)
 		:
 	;;
 	*)
