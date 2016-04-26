@@ -28,6 +28,9 @@ case "$CODE" in
 	qiana)
 		:
 	;;
+	rebecca|rafaela|rosa)
+		CODE=qiana
+	;;
 	xenial)
 		:
 	;;
