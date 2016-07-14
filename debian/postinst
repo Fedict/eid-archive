@@ -19,9 +19,6 @@ case "$CODE" in
 	jessie)
 		:
 	;;
-	maya)
-		:
-	;;
 	trusty)
 		:
 	;;
@@ -31,6 +28,9 @@ case "$CODE" in
 	rebecca|rafaela|rosa)
 		CODE=qiana
 	;;
+	sarah)
+		:
+	;;
 	xenial)
 		:
 	;;
@@ -38,13 +38,13 @@ case "$CODE" in
 		echo -e "WARNING: Unsupported distribution found. Please see the website at\nhttp://eid.belgium.be/en/using_your_eid/installing_the_eid_software/linux\nfor a list of supported distributions."
 		case "$DIST" in
 			LinuxMint)
-				if dpkg --compare-versions 17 le $REL
+				if dpkg --compare-versions 18 le $REL
 				then
-					CODE=qiana
+					CODE=sarah
 				else
-					if dpkg --compare-versions 13 le $REL
+					if dpkg --compare-versions 17 le $REL
 					then
-						CODE=maya
+						CODE=qiana
 					else
 						too_old
 					fi
@@ -52,13 +52,13 @@ case "$CODE" in
 				echo "Found Linux Mint $REL, using $CODE"
 			;;
 			Ubuntu)
-				if dpkg --compare-versions 14.04 le $REL
+				if dpkg --compare-versions 16.04 le $REL
 				then
-					CODE=trusty
+					CODE=xenial
 				else
-					if dpkg --compare-versions 12.04 le $REL
+					if dpkg --compare-versions 14.04 le $REL
 					then
-						CODE=precise
+						CODE=trusty
 					else
 						too_old
 					fi
