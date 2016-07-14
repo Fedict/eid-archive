@@ -1,4 +1,4 @@
-eid-archive (2016.3) UNRELEASED; urgency=medium
+eid-archive (2016.3) meta; urgency=medium
 
   * debian/control: fix Maintainer field
   * debian/postinst: Add support for Linux Mint 18 "Sarah". While at it,
