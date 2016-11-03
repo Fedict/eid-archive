@@ -1,3 +1,9 @@
+eid-archive (2016.4) meta; urgency=medium
+
+  * Add support for Ubuntu 16.10 "Yakkety Yak"
+
+ -- Wouter Verhelst <wouter@debian.org>  Thu, 03 Nov 2016 11:44:18 +0100
+
 eid-archive (2016.3) meta; urgency=medium
 
   * debian/control: fix Maintainer field

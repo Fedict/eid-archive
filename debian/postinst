@@ -34,6 +34,9 @@ case "$CODE" in
 	xenial)
 		:
 	;;
+	yakkety)
+		:
+	;;
 	*)
 		echo -e "WARNING: Unsupported distribution found. Please see the website at\nhttp://eid.belgium.be/en/using_your_eid/installing_the_eid_software/linux\nfor a list of supported distributions."
 		case "$DIST" in
