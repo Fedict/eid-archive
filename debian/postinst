@@ -31,6 +31,9 @@ case "$CODE" in
 	sarah)
 		:
 	;;
+	selena)
+		CODE=sarah
+	;;
 	xenial)
 		:
 	;;

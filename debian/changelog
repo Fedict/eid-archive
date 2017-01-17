@@ -1,3 +1,10 @@
+eid-archive (2017.1) meta; urgency=medium
+
+  * Add Linux Mint 18.1 "Selena" as a supported distribution. Not sure
+    why Linux Mint changes code names for a point release, but ah well.
+
+ -- Wouter Verhelst <wouter@debian.org>  Tue, 17 Jan 2017 11:14:06 +0100
+
 eid-archive (2016.4) meta; urgency=medium
 
   * Add support for Ubuntu 16.10 "Yakkety Yak"
