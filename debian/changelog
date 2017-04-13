@@ -1,14 +1,9 @@
-eid-archive (2017.3) meta; urgency=medium
-
-  * debian/postinst: add support for Ubuntu 17.04 "Zesty Zapus"
-
- -- Wouter Verhelst <wouter@debian.org>  Thu, 13 Apr 2017 15:11:07 +0200
-
 eid-archive (2017.2) meta; urgency=medium
 
   * debian/postinst: if /usr/sbin/update-software-center exists, run it
     (with --triggered=TRIGGERED), so that software-center should find us
     somewhat sooner.
+  * debian/postinst: add support for Ubuntu 17.04 "Zesty Zapus"
 
  -- Wouter Verhelst <wouter@debian.org>  Fri, 27 Jan 2017 14:54:01 +0100
 
