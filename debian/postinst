@@ -34,10 +34,10 @@ case "$CODE" in
 	selena)
 		CODE=sarah
 	;;
-	xenial)
+	yakkety)
 		:
 	;;
-	yakkety)
+	zesty)
 		:
 	;;
 	*)
@@ -94,6 +94,10 @@ then
 	ln -sf /usr/share/eid-archive/keys/10a04d46.gpg /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
 else
 	rm -f /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
+fi
+
+if [ -x /usr/sbin/update-software-center ]; then
+	update-software-center --triggered=TRIGGERED
 fi
 
 echo -e "Repository enabled, keys installed. Please run \"apt-get update\" followed by\n\"apt-get install eid-mw eid-viewer\" to install the middleware and the viewer, respectively."
