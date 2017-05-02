@@ -1,3 +1,9 @@
+eid-archive (2017.3) meta; urgency=medium
+
+  * debian/postinst: drop yakkety, add xenial (LTS) back -- oops.
+
+ -- Wouter Verhelst <wouter@debian.org>  Tue, 02 May 2017 10:37:01 +0200
+
 eid-archive (2017.2) meta; urgency=medium
 
   * debian/postinst: if /usr/sbin/update-software-center exists, run it

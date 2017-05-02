@@ -34,7 +34,7 @@ case "$CODE" in
 	selena)
 		CODE=sarah
 	;;
-	yakkety)
+	xenial)
 		:
 	;;
 	zesty)
