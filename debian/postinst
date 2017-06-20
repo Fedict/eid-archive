@@ -13,9 +13,6 @@ too_old() {
 }
 
 case "$CODE" in
-	wheezy)
-		:
-	;;
 	jessie)
 		:
 	;;
@@ -31,8 +28,11 @@ case "$CODE" in
 	sarah)
 		:
 	;;
-	selena)
+	serena)
 		CODE=sarah
+	;;
+	stretch)
+		:
 	;;
 	xenial)
 		:
@@ -72,15 +72,15 @@ case "$CODE" in
 				echo "Found Ubuntu $REL, using $CODE"
 			;;
 			Debian)
-				CODE=wheezy
+				CODE=jessie
 				if [ "$REL" = "unstable" ]; then
-					CODE=jessie
+					CODE=stretch
 				fi
 				echo "Found Debian $REL, using $CODE"
 			;;
 			*)
-				CODE=wheezy
-				echo "Unknown distribution found. Using wheezy as fallback."
+				CODE=trusty
+				echo "Unknown distribution found. Using trusty as fallback."
 			;;
 		esac
 	;;

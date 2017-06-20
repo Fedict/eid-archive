@@ -1,3 +1,16 @@
+eid-archive (2017.4) meta; urgency=medium
+
+  * debian/postinst: drop support for Debian 7 "wheezy", add Debian 9
+    "stretch" in its place.
+    - Since wheezy was the "all else failed, let's fall back on the
+      oldest distribution" option, switch that over to trusty rather
+      than wheezy now, which is now the oldest supported option.
+  * While at it, fix the spelling of "selena" to "serena". This will
+    cause users of serena to now use the sarah repository (as they
+    should), rather than the qiana one.
+
+ -- Wouter Verhelst <wouter@debian.org>  Tue, 20 Jun 2017 12:28:10 +0200
+
 eid-archive (2017.3) meta; urgency=medium
 
   * debian/postinst: drop yakkety, add xenial (LTS) back -- oops.
