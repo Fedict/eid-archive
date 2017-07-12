@@ -1,3 +1,10 @@
+eid-archive (2017.5) meta; urgency=medium
+
+  * debian/postinst: add sonya (Linux Mint 18.2) as another alias for sarah
+    (18.0)
+
+ -- Wouter Verhelst <wouter@debian.org>  Wed, 12 Jul 2017 10:57:41 +0200
+
 eid-archive (2017.4) meta; urgency=medium
 
   * debian/postinst: drop support for Debian 7 "wheezy", add Debian 9

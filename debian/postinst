@@ -28,7 +28,7 @@ case "$CODE" in
 	sarah)
 		:
 	;;
-	serena)
+	serena|sonya)
 		CODE=sarah
 	;;
 	stretch)
