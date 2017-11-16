@@ -1,3 +1,9 @@
+eid-archive (2017.6) meta; urgency=medium
+
+  * debian/postinst: add artful (Ubuntu 17.10), drop zesty
+
+ -- Wouter Verhelst <wouter@debian.org>  Thu, 16 Nov 2017 16:26:51 +0100
+
 eid-archive (2017.5) meta; urgency=medium
 
   * debian/postinst: add sonya (Linux Mint 18.2) as another alias for sarah
