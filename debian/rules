@@ -10,5 +10,8 @@ override_dh_auto_clean:
 	rm -f 10a04d46.gpg 6773d225.gpg
 	dh_auto_clean
 
+override_dh_builddeb:
+	dh_builddeb -- --no-uniform-compression
+
 %.gpg: %.asc
 	gpg --dearmor < $< > $@

@@ -1,3 +1,11 @@
+eid-archive (2018.1) meta; urgency=medium
+
+  * debian/rules: disable uniform compression, so that the package can
+    still be installed on Ubuntu 14.04, which doesn't support xz
+    compression for control.tar.
+
+ -- Wouter Verhelst <wouter@debian.org>  Wed, 31 Jan 2018 11:04:32 +0100
+
 eid-archive (2017.6) meta; urgency=medium
 
   * debian/postinst: add artful (Ubuntu 17.10), drop zesty
