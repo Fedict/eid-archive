@@ -73,7 +73,7 @@ case "$CODE" in
 			;;
 			Debian)
 				CODE=jessie
-				if [ "$REL" = "unstable" ]; then
+				if [ "$REL" = "unstable" -o "$REL" = "testing" ]; then
 					CODE=stretch
 				fi
 				echo "Found Debian $REL, using $CODE"
