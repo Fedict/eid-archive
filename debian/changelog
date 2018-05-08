@@ -1,3 +1,12 @@
+eid-archive (2018.2) meta; urgency=medium
+
+  * debian/postinst: drop artful (Ubuntu 17.10), drop qianah (older
+    Linux Mint) and all its aliases, drop trusty (Ubuntu 14.04 LTS), add
+    bionic (Ubuntu 18.04 LTS), update fallback codename to point to
+    Xenial rather than Trusty.
+
+ -- Wouter Verhelst <wouter@debian.org>  Tue, 08 May 2018 17:17:43 +0200
+
 eid-archive (2018.1) meta; urgency=medium
 
   * debian/rules: disable uniform compression, so that the package can

@@ -16,15 +16,6 @@ case "$CODE" in
 	jessie)
 		:
 	;;
-	trusty)
-		:
-	;;
-	qiana)
-		:
-	;;
-	rebecca|rafaela|rosa)
-		CODE=qiana
-	;;
 	sarah)
 		:
 	;;
@@ -37,7 +28,7 @@ case "$CODE" in
 	xenial)
 		:
 	;;
-	artful)
+	bionic)
 		:
 	;;
 	*)
@@ -48,12 +39,7 @@ case "$CODE" in
 				then
 					CODE=sarah
 				else
-					if dpkg --compare-versions 17 le $REL
-					then
-						CODE=qiana
-					else
-						too_old
-					fi
+					too_old
 				fi
 				echo "Found Linux Mint $REL, using $CODE"
 			;;
@@ -62,12 +48,7 @@ case "$CODE" in
 				then
 					CODE=xenial
 				else
-					if dpkg --compare-versions 14.04 le $REL
-					then
-						CODE=trusty
-					else
-						too_old
-					fi
+					too_old
 				fi
 				echo "Found Ubuntu $REL, using $CODE"
 			;;
@@ -79,8 +60,8 @@ case "$CODE" in
 				echo "Found Debian $REL, using $CODE"
 			;;
 			*)
-				CODE=trusty
-				echo "Unknown distribution found. Using trusty as fallback."
+				CODE=xenial
+				echo "Unknown distribution found. Using $CODE as fallback."
 			;;
 		esac
 	;;
