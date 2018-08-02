@@ -1,4 +1,4 @@
-eid-archive (2018.3) UNRELEASED; urgency=medium
+eid-archive (2018.3) meta; urgency=medium
 
   * debian/postinst: add tara (Linux Mint 19).
 
