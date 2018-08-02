@@ -22,6 +22,9 @@ case "$CODE" in
 	serena|sonya)
 		CODE=sarah
 	;;
+	tara)
+		:
+	;;
 	stretch)
 		:
 	;;
