@@ -1,3 +1,9 @@
+eid-archive (2019.1) meta; urgency=medium
+
+  * debian/postinst: add tessa (Linux Mint 19.1).
+
+ -- Wouter Verhelst <wouter@debian.org>  Thu, 24 Jan 2019 11:06:19 +0100
+
 eid-archive (2018.4) meta; urgency=medium
 
   * debian/postinst: clean up slightly, add cosmic (Ubuntu 18.10)
