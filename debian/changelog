@@ -1,4 +1,4 @@
-eid-archive (2019.1+nmu1) UNRELEASED; urgency=medium
+eid-archive (2019.1) UNRELEASED; urgency=medium
 
   * debian/postinst: add disco (Ubuntu 19.04), drop cosmic
 
