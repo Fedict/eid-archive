@@ -23,7 +23,7 @@ case "$CODE" in
 		:
 	;;
 	*)
-		echo -e "WARNING: Unsupported distribution found. Please see the website at\nhttp://eid.belgium.be/en/using_your_eid/installing_the_eid_software/linux\nfor a list of supported distributions."
+		echo -e "WARNING: Unsupported distribution found. Please see the website at\nhttps://eid.belgium.be/en/faq/which-linux-distributions-are-supported#7406\nfor a list of supported distributions."
 		case "$DIST" in
 			LinuxMint)
 				if dpkg --compare-versions 18 le $REL
