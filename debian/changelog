@@ -1,8 +1,8 @@
-eid-archive (2019.1) UNRELEASED; urgency=medium
+eid-archive (2019.2) meta; urgency=medium
 
   * debian/postinst: add disco (Ubuntu 19.04), drop cosmic
 
- -- Wouter Verhelst <wouter@pc181009.be.zetes.internal>  Tue, 23 Apr 2019 10:39:10 +0200
+ -- Wouter Verhelst <wouter@pc181009.be.zetes.internal>  Tue, 23 Apr 2019 10:43:21 +0200
 
 eid-archive (2019.1) meta; urgency=medium
 
