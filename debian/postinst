@@ -19,7 +19,7 @@ case "$CODE" in
 	tessa)
 		CODE=tara
 	;;
-	jessie|sarah|tara|stretch|xenial|bionic|disco)
+	buster|sarah|tara|stretch|xenial|bionic|disco)
 		:
 	;;
 	*)
@@ -44,9 +44,9 @@ case "$CODE" in
 				echo "Found Ubuntu $REL, using $CODE"
 			;;
 			Debian)
-				CODE=jessie
+				CODE=stretch
 				if [ "$REL" = "unstable" -o "$REL" = "testing" ]; then
-					CODE=stretch
+					CODE=buster
 				fi
 				echo "Found Debian $REL, using $CODE"
 			;;

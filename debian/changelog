@@ -1,3 +1,10 @@
+eid-archive (2019.3) meta; urgency=medium
+
+  * debian/postinst: add buster (Debian 10), drop jessie, update Debian
+    fallback codename to point to stretch rather than jessie.
+
+ -- Wouter Verhelst <wouter@pc181009.be.zetes.internal>  Mon, 08 Jul 2019 10:07:02 +0200
+
 eid-archive (2019.2) meta; urgency=medium
 
   * debian/postinst: add disco (Ubuntu 19.04), drop cosmic
