@@ -1,15 +1,23 @@
+eid-archive (2019.4) meta; urgency=medium
+
+  * debian/postinst: add code name aliases for Linux Mint 18.3 "sylvia"
+    and 19.2 "tina"
+  * debian/changelog: fix email addresses to resolve to something
+
+ -- Wouter Verhelst <wouter.verhelst@zetes.com>  Mon, 05 Aug 2019 13:40:46 +0200
+
 eid-archive (2019.3) meta; urgency=medium
 
   * debian/postinst: add buster (Debian 10), drop jessie, update Debian
     fallback codename to point to stretch rather than jessie.
 
- -- Wouter Verhelst <wouter@pc181009.be.zetes.internal>  Mon, 08 Jul 2019 10:07:02 +0200
+ -- Wouter Verhelst <wouter.verhelst@zetes.com>  Mon, 08 Jul 2019 10:07:02 +0200
 
 eid-archive (2019.2) meta; urgency=medium
 
   * debian/postinst: add disco (Ubuntu 19.04), drop cosmic
 
- -- Wouter Verhelst <wouter@pc181009.be.zetes.internal>  Tue, 23 Apr 2019 10:43:21 +0200
+ -- Wouter Verhelst <wouter.verhelst@zetes.com>  Tue, 23 Apr 2019 10:43:21 +0200
 
 eid-archive (2019.1) meta; urgency=medium
 
