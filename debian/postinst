@@ -13,10 +13,10 @@ too_old() {
 }
 
 case "$CODE" in
-	serena|sonya)
+	serena|sonya|sylvia)
 		CODE=sarah
 	;;
-	tessa)
+	tessa|tina)
 		CODE=tara
 	;;
 	buster|sarah|tara|stretch|xenial|bionic|disco)
