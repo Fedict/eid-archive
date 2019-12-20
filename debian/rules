@@ -3,6 +3,8 @@
 %: 
 	dh $@
 
+override_dh_auto_build:
+
 override_dh_install: 10a04d46.gpg 6773d225.gpg
 	dh_install
 
