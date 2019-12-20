@@ -1,0 +1,44 @@
+---
+build-deb:
+  image: debian:stable
+  before_script:
+  - apt-get update
+  - apt-get -y install --no-install-recommends devscripts equivs build-essential fakeroot
+  - mk-build-deps -r -i -t "apt-get -y -o Debug::pkgProblemResolver=yes --no-install-recommends"
+  - mkdir -p products/deb
+  script:
+  - dpkg-buildpackage -uc -us -i -I.git -rfakeroot
+  - dcmd mv ../eid-archive*changes products/deb
+  artifacts:
+    paths:
+    - products
+
+build-fedora:
+  image: fedora:latest
+  before_script:
+  - dnf -y install rpm-build
+  script:
+  - rpmbuild -ba eid-archive-fedora.spec
+  artifacts:
+    paths:
+    - eid-archive-fedora*.rpm
+
+build-el:
+  image: fedora:latest
+  before_script:
+  - dnf -y install rpm-build
+  script:
+  - rpmbuild -ba eid-archive-el.spec
+  artifacts:
+    paths:
+    - eid-archive-el*.rpm
+
+build-suse:
+  image: fedora:latest
+  before_script:
+  - dnf -y install rpm-build
+  script:
+  - rpmbuild -ba eid-archive-suse.spec
+  artifacts:
+    paths:
+    - eid-archive-suse*.rpm
