@@ -11,7 +11,7 @@ build:
   - dpkg-buildpackage -uc -us -i -I.git -rfakeroot
   - dcmd mv ../eid-archive*changes products/deb
   - make rpms
-  - mv /root/rpmbuild/SOURCES/*.rpm products/rpm
+  - mv /root/rpmbuild/RPMS/*.rpm products/rpm
   artifacts:
     paths:
     - products
