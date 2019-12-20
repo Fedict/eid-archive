@@ -1,3 +1,9 @@
+eid-archive (2019.6) meta; urgency=medium
+
+  * debian/postinst: update for Linux Mint 19.3 "tricia"
+
+ -- Wouter Verhelst <wouter.verhelst@zetes.com>  Fri, 20 Dec 2019 09:17:45 +0200
+
 eid-archive (2019.5) meta; urgency=medium
 
   * debian/postinst: update for Ubuntu 19.10

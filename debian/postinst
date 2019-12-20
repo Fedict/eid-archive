@@ -16,7 +16,7 @@ case "$CODE" in
 	serena|sonya|sylvia)
 		CODE=sarah
 	;;
-	tessa|tina)
+	tessa|tina|tricia)
 		CODE=tara
 	;;
 	buster|sarah|tara|stretch|xenial|bionic|eoan)
