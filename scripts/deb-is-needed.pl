@@ -11,8 +11,9 @@ if(!exists($ENV{REPREPRO_BASE_DIR})) {
 	$ENV{REPREPRO_BASE_DIR} = '/srv/repo/reprepro';
 }
 
+my $found = 0;
+
 foreach my $file(@ARGV) {
-	my $found = 0;
 	$chg->load($file);
 	my $version = $chg->{Version};
 	my $dist = $chg->{Distribution};
