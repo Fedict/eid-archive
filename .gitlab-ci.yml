@@ -19,8 +19,13 @@ variables:
   OPENSUSE_OLDSTABLE_VERSION: "15.0"
   OPENSUSE_STABLE_VERSION: "15.1"
 
+stages:
+- build
+- sign
+
 build:
   image: debian:stable
+  stage: build
   before_script:
   - apt-get update
   - apt-get -y install --no-install-recommends devscripts equivs build-essential fakeroot rpm
@@ -37,6 +42,7 @@ build:
     - products
 
 sign-deb:
+  stage: sign
   tags:
   - repobuilder
   only:
@@ -48,6 +54,7 @@ sign-deb:
   - reprepro processincoming incoming
 
 sign-fed:
+  stage: sign
   tags:
   - repobuilder
   only:
