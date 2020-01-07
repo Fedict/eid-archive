@@ -42,6 +42,7 @@ sign-deb:
   only:
   - gitlab
   script:
+  - set -e
   - if [ -z "$REPREPRO_BASE_DIR"]; then export REPREPRO_BASE_DIR=/srv/repo/reprepro; fi
   - for deb in products/deb/*.changes; do if ./scripts/deb-is-needed.pl $deb; then dcmd mv $deb /srv/repo/reprepro/incoming; fi; done
   - reprepro processincoming incoming
@@ -52,4 +53,5 @@ sign-fed:
   only:
   - gitlab
   script:
+  - set -e
   - for rpm in products/rpm/*.rpm; do TARGET=$(./scripts/rpm-is-needed.pl $rpm); if [ ! -z "$TARGET" ]; then mv $rpm $TARGET; rpmsign --resign --key-id=$GPG_KEY_ID $TARGET; pushd $(dirname $TARGET)/../..; createrepo .; if ./scripts/is-suse.pl $rpm; then pushd repodata; gpg --yes --batch --passphrase "" --default-key $GPG_KEY_ID --no-tty -b --armor repomd.xml; popd; fi; popd; done
