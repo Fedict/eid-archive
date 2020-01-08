@@ -61,4 +61,4 @@ sign-fed:
   - gitlab
   script:
   - set -e
-  - for rpm in products/rpm/*.rpm; do TARGET=$(./scripts/rpm-is-needed.pl $rpm); if [ ! -z "$TARGET" ]; then mv $rpm $TARGET; rpmsign --resign --key-id=$GPG_KEY_ID $TARGET; pushd $(dirname $TARGET)/../..; createrepo .; if ./scripts/is-suse.pl $rpm; then pushd repodata; gpg --yes --batch --passphrase "" --default-key $GPG_KEY_ID --no-tty -b --armor repomd.xml; popd; fi; popd; fi; done
+  - for rpm in products/rpm/*.rpm; do TARGET=$(./scripts/rpm-is-needed.pl $rpm); if [ ! -z "$TARGET" ]; then mkdir -p $(dirname $TARGET); mv $rpm $TARGET; rpmsign --resign --key-id=$GPG_KEY_ID $TARGET; pushd $(dirname $TARGET)/../..; createrepo .; if ./scripts/is-suse.pl $rpm; then pushd repodata; gpg --yes --batch --passphrase "" --default-key $GPG_KEY_ID --no-tty -b --armor repomd.xml; popd; fi; popd; fi; done
