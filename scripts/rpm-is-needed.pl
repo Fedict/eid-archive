@@ -10,6 +10,7 @@ my %distvers = (
 );
 
 foreach my $file(@ARGV) {
+    print STDERR "checking $file\n";
 	my $qf = '%{NAME}|%{VERSION}|%{RELEASE}|%{ARCH}\n';
 	open my $query, "rpm --queryformat '$qf' -qp $file|";
 	while(<$query>) {
