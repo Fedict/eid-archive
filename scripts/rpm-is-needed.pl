@@ -18,11 +18,9 @@ foreach my $file(@ARGV) {
 		my ($name, $version, $release, $arch) = split/\|/;
 		(undef, undef, my $dist) = split/-/, $name;
 		my $dirdist = $distvers{$dist}{dirpart};
-		foreach my $vers($distvers{$dist}) {
+		foreach my $vers(@{$distvers{$dist}{versions}}) {
 			next if (-f "/srv/repo/repo/rpm/$dirdist/$vers/RPMS/$arch/$name-$version-$release.$arch.rpm");
 			print "/srv/repo/repo/rpm/$dirdist/$vers/RPMS/$arch/$name-$version-$release.$arch.rpm\n";
 		}
 	}
 }
-
-exit 1;
