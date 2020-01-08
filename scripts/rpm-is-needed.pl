@@ -15,7 +15,7 @@ foreach my $file(@ARGV) {
 	open my $query, "rpm --queryformat '$qf' -qp $file|";
 	while(<$query>) {
 		chomp;
-		my ($name, $version, $release, $arch) = split/|/;
+		my ($name, $version, $release, $arch) = split/\|/;
 		(undef, undef, my $dist) = split/-/, $name;
 		my $dirdist = $distvers{$dist}{dirpart};
 		foreach my $vers($distvers{$dist}) {
