@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use File::Copy;
-use File::Path;
+use File::Path qw/make_path/;
 use Cwd qw/cwd/;
 
 my %distvers = (
