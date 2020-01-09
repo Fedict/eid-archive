@@ -4,6 +4,11 @@ use strict;
 use warnings;
 
 use Dpkg::Control::HashCore;
+use File::Basename;
+
+use lib join("/", dirname($0), "lib");
+
+use codes;
 
 my $chg = Dpkg::Control::HashCore->new;
 
@@ -11,15 +16,7 @@ if(!exists($ENV{REPREPRO_BASE_DIR})) {
 	$ENV{REPREPRO_BASE_DIR} = '/srv/repo/reprepro';
 }
 
-my @codes = (
-	$ENV{DEBIAN_OLDSTABLE_CODE},
-	$ENV{DEBIAN_STABLE_CODE},
-	$ENV{UBUNTU_OLDLTS_CODE},
-	$ENV{UBUNTU_LTS_CODE},
-	$ENV{UBUNTU_STABLE_CODE},
-	$ENV{MINT_OLDLTS_CODE},
-	$ENV{MINT_LTS_CODE},
-);
+my @codes = get_deb_codes;
 
 foreach my $file(@ARGV) {
 	$chg->load($file);
