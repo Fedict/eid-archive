@@ -52,6 +52,7 @@ sign-deb:
   - if [ -z "$REPREPRO_BASE_DIR"]; then export REPREPRO_BASE_DIR=/srv/repo/reprepro; fi
   - for deb in products/deb/*.changes; do if ./scripts/deb-is-needed.pl $deb; then dcmd mv $deb /srv/repo/reprepro/incoming; fi; done
   - reprepro processincoming incoming
+  - for deb in products/deb/*.changes; do ./scripts/deb-copy-if-needed.pl $deb; done
 
 sign-fed:
   stage: sign
