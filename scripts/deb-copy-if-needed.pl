@@ -21,17 +21,17 @@ my $found = 0;
 my @codes = get_deb_codes;
 
 my @targets = ();
-my %source;
 
 foreach my $file(@ARGV) {
 	$chg->load($file);
 	my $version = $chg->{Version};
 	my @arch = split(/ /, $chg->{Architecture});
 	my $source = $chg->{Source};
+	my %source;
 
 	CODE: foreach my $code(@codes) {
 		next unless defined($code);
-		foreach my $prefix("candidate/", "continuous", "") {
+		foreach my $prefix("candidate/", "continuous/", "") {
 			open my $reprepro, "/usr/bin/reprepro -A source list $prefix$code $source|";
 			while(<$reprepro>) {
 				chomp;
@@ -44,6 +44,7 @@ foreach my $file(@ARGV) {
 			}
 		}
 	}
+	next unless exists($source{code});
 	foreach my $target(@codes) {
 		next unless defined($target);
 		next if($target eq $source{code} && $source{prefix} eq "");
