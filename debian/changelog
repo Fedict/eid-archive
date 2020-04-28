@@ -1,3 +1,9 @@
+eid-archive (2020.1) meta; urgency=medium
+
+  * debian/postinst: update for Ubuntu 20.04 "Focal Fossa"
+
+ -- Wouter Verhelst <wouter.verhelst@zetes.com>  Tue, 28 Apr 2020 10:52:01 +0200
+
 eid-archive (2019.6) meta; urgency=medium
 
   * debian/postinst: update for Linux Mint 19.3 "tricia"

@@ -19,7 +19,7 @@ case "$CODE" in
 	tessa|tina|tricia)
 		CODE=tara
 	;;
-	buster|sarah|tara|stretch|xenial|bionic|eoan)
+	buster|sarah|tara|stretch|bionic|focal)
 		:
 	;;
 	*)
@@ -35,9 +35,9 @@ case "$CODE" in
 				echo "Found Linux Mint $REL, using $CODE"
 			;;
 			Ubuntu)
-				if dpkg --compare-versions 16.04 le $REL
+				if dpkg --compare-versions 18.04 le $REL
 				then
-					CODE=xenial
+					CODE=bionic
 				else
 					too_old
 				fi
