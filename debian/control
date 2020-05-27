@@ -1,11 +1,11 @@
-Source: eid-archive
+Source: eidlink-archive
 Section: misc
 Maintainer: Fedict Servicedesk <servicedesk@fedict.be>
 Build-Depends: debhelper (>= 9)
 Priority: extra
 Standards-Version: 3.9.5
 
-Package: eid-archive
+Package: eidlink-archive
 Architecture: all
 Depends: gpgv, lsb-release, ucf
 Recommends: gnupg
