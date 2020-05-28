@@ -1,3 +1,10 @@
+eidlink-archive (2020.2) meta; urgency=medium
+
+  * Fix key installation
+  * Add support for Debian 9 "stretch"
+
+ -- Wouter Verhelst <wouter.verhelst@zetes.com>  Thu, 28 May 2020 13:14:50 +0200
+
 eidlink-archive (2020.1) meta; urgency=medium
 
   * Create a new package, based on the eid-archive one.
