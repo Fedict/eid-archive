@@ -6,6 +6,8 @@ CODE=$(lsb_release -c -s)
 DIST=$(lsb_release -i -s)
 REL=$(lsb_release -r -s)
 DIR=$(mktemp -d)
+CONTINUOUSKEY=
+RELEASEKEY=f3dedd58
 
 too_old() {
 	echo "distribution too old, cannot continue. Please upgrade, or compile from source."
@@ -42,10 +44,10 @@ esac
 sed -e "s/@DIST@/${CODE}/g" /usr/share/eid-archive/eidlink.list > $DIR/eidlink.list
 ucf $DIR/eidlink.list /etc/apt/sources.list.d/eidlink.list
 
-ln -sf /usr/share/eid-archive/keys/6773d225.gpg /etc/apt/trusted.gpg.d/eid-archive-released-builds.gpg
+ln -sf /usr/share/eid-archive/keys/$RELEASEKEY.gpg /etc/apt/trusted.gpg.d/eid-archive-released-builds.gpg
 if grep -E '^[[:space:]]*deb.*(continuous|candidate)' /etc/apt/sources.list.d/eidlink.list >/dev/null 2>&1
 then
-	ln -sf /usr/share/eid-archive/keys/10a04d46.gpg /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
+	ln -sf /usr/share/eid-archive/keys/$CONTINUOUSKEY.gpg /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
 else
 	rm -f /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
 fi
