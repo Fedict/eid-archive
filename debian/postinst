@@ -15,7 +15,7 @@ too_old() {
 }
 
 case "$CODE" in
-	buster|bionic|focal)
+	stretch|buster|bionic|focal)
 		:
 	;;
 	*)
@@ -31,7 +31,7 @@ case "$CODE" in
 				echo "Found Ubuntu $REL, using $CODE"
 			;;
 			Debian)
-				CODE=buster
+				CODE=stretch
 				echo "Found Debian $REL, using $CODE"
 			;;
 			*)
