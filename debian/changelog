@@ -1,3 +1,10 @@
+eid-archive (2020.2) meta; urgency=medium
+
+  * debian/postinst: update for Linux Mint 20 "Ulyana"; drops support
+    for Linux Mint 18.
+
+ -- Wouter Verhelst <wouter.verhelst@zetes.com>  Mon, 29 Jun 2020 12:36:28 +0200
+
 eid-archive (2020.1) meta; urgency=medium
 
   * debian/postinst: update for Ubuntu 20.04 "Focal Fossa"
