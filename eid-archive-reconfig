@@ -1,0 +1,17 @@
+#!/bin/bash
+
+case "$1" in
+	-h|--help)
+		echo "This script will rewrite /etc/apt/sources.list.d/eid.list after an upgrade."
+		echo "It will overwrite any manual modifications that have ben made in that file."
+		echo "You have been warned!"
+	;;
+	*)
+		echo "E: unknown option: $1. Exiting." >&2
+		exit 1
+	;;
+esac
+
+ucf --purge /etc/apt/sources.list.d/eid.list
+rm -f /etc/apt/sources.list.d/eid.list*
+dpkg-reconfigure eid-archive

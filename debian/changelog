@@ -1,3 +1,11 @@
+eid-archive (2020.3) meta; urgency=medium
+
+  * eid-archive-reconfig: add script to rewrite
+    /etc/apt/sources.list.d/eid.list from scratch (useful after
+    upgrades)
+
+ -- Wouter Verhelst <wouter.verhelst@zetes.com>  Wed, 22 Jul 2020 15:22:04 +0200
+
 eid-archive (2020.2) meta; urgency=medium
 
   * debian/postinst: update for Linux Mint 20 "Ulyana"; drops support
