@@ -1,3 +1,9 @@
+eid-archive (2020.4) meta; urgency=medium
+
+  * debian/postinst: update for Ubuntu 20.10 "Groovy Gorilla"
+
+ -- Wouter Verhelst <wouter.verhelst@zetes.com>  Thu, 29 Oct 2020 14:46:53 +0200
+
 eid-archive (2020.3) meta; urgency=medium
 
   * eid-archive-reconfig: add script to rewrite

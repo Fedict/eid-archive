@@ -16,7 +16,7 @@ case "$CODE" in
 	tessa|tina|tricia)
 		CODE=tara
 	;;
-	buster|sarah|tara|stretch|bionic|focal|ulyana)
+	buster|sarah|tara|stretch|bionic|focal|ulyana|groovy)
 		:
 	;;
 	*)
