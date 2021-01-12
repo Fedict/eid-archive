@@ -1,3 +1,9 @@
+eid-archive (2020.5) meta; urgency=medium
+
+  * debian/postinst: update for Linux Mint 20.1 "Ulyssa"
+
+ -- Wouter Verhelst <wouter@debian.org>  Tue, 12 Jan 2021 17:04:11 +0200
+
 eid-archive (2020.4) meta; urgency=medium
 
   * debian/postinst: update for Ubuntu 20.10 "Groovy Gorilla"
