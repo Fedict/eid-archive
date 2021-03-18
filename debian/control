@@ -1,11 +1,11 @@
-Source: eidlink-archive
+Source: beidconnect-archive
 Section: misc
 Maintainer: Fedict Servicedesk <servicedesk@fedict.be>
 Build-Depends: debhelper (>= 9)
 Priority: extra
 Standards-Version: 3.9.5
 
-Package: eidlink-archive
+Package: beidconnect-archive
 Architecture: all
 Depends: gpgv, lsb-release, ucf
 Recommends: gnupg

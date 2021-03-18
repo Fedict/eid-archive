@@ -41,21 +41,21 @@ case "$CODE" in
 		esac
 	;;
 esac
-sed -e "s/@DIST@/${CODE}/g" /usr/share/eid-archive/eidlink.list > $DIR/eidlink.list
-ucf $DIR/eidlink.list /etc/apt/sources.list.d/eidlink.list
+sed -e "s/@DIST@/${CODE}/g" /usr/share/beidconnect-archive/beidconnect.list > $DIR/beidconnect.list
+ucf $DIR/beidconnect.list /etc/apt/sources.list.d/beidconnect.list
 
-ln -sf /usr/share/eid-archive/keys/$RELEASEKEY.gpg /etc/apt/trusted.gpg.d/eid-archive-released-builds.gpg
-if grep -E '^[[:space:]]*deb.*(continuous|candidate)' /etc/apt/sources.list.d/eidlink.list >/dev/null 2>&1
+ln -sf /usr/share/beidconnect-archive/keys/$RELEASEKEY.gpg /etc/apt/trusted.gpg.d/beidconnect-archive-released-builds.gpg
+if grep -E '^[[:space:]]*deb.*(continuous|candidate)' /etc/apt/sources.list.d/beidconnect.list >/dev/null 2>&1
 then
-	ln -sf /usr/share/eid-archive/keys/$CONTINUOUSKEY.gpg /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
+	ln -sf /usr/share/beidconnect-archive/keys/$CONTINUOUSKEY.gpg /etc/apt/trusted.gpg.d/beidconnect-archive-test-builds.gpg
 else
-	rm -f /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
+	rm -f /etc/apt/trusted.gpg.d/beidconnect-archive-test-builds.gpg
 fi
 
 if [ -x /usr/sbin/update-software-center ]; then
 	update-software-center --triggered=TRIGGERED
 fi
 
-echo -e "Repository enabled, keys installed. Please run \"apt-get update\" followed by\n\"apt-get install eid-mw eid-viewer\" to install the middleware and the viewer, respectively."
+echo -e "Repository enabled, keys installed. Please run \"apt-get update\" followed by\n\"apt-get install beidconnect\" to install the BeIDConnect software."
 
 #DEBHELPER#
