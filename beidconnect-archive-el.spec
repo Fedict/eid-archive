@@ -5,7 +5,7 @@ Release: 1
 License: MIT
 
 Source0: beidconnect-archive-el.repo
-Source1: https://eid.static.bosa.fgov.be/f3dedd58.asc
+Source1: https://eid.static.bosa.fgov.be/69fa2d05.asc
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
