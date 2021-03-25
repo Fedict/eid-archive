@@ -7,7 +7,7 @@ DIST=$(lsb_release -i -s)
 REL=$(lsb_release -r -s)
 DIR=$(mktemp -d)
 CONTINUOUSKEY=
-RELEASEKEY=f3dedd58
+RELEASEKEY=69fa2d05
 
 too_old() {
 	echo "distribution too old, cannot continue. Please upgrade, or compile from source."

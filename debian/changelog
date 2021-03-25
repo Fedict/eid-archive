@@ -1,3 +1,9 @@
+beidconnect-archive (2021.2) meta; urgency=medium
+
+  * Fix key name
+
+ -- Wouter Verhelst <wouter.verhelst@zetes.com>  Thu, 25 Mar 2021 16:21:57 +0200
+
 beidconnect-archive (2021.1) meta; urgency=medium
 
   * Rename package.
