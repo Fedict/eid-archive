@@ -1,3 +1,9 @@
+eid-archive (2021.1) meta; urgency=medium
+
+  * debian/postinst: update for Ubuntu 21.04 "Hirsute Hippo"
+
+ -- Wouter Verhelst <wouter@debian.org>  Mon, 31 May 2021 15:08:03 +0200
+
 eid-archive (2020.5) meta; urgency=medium
 
   * debian/postinst: update for Linux Mint 20.1 "Ulyssa"
