@@ -51,7 +51,7 @@ case "$CODE" in
 				echo "Found Debian $REL, using $CODE"
 			;;
 			*)
-				CODE=xenial
+				CODE=bionic
 				echo "Unknown distribution found. Using $CODE as fallback."
 			;;
 		esac
