@@ -19,7 +19,7 @@ case "$CODE" in
 	ulyssa|uma)
 		CODE=ulyana
 	;;
-	buster|tara|stretch|bionic|focal|ulyana|hirsute)
+	buster|bullseye|tara|bionic|focal|ulyana|hirsute)
 		:
 	;;
 	*)
@@ -44,9 +44,9 @@ case "$CODE" in
 				echo "Found Ubuntu $REL, using $CODE"
 			;;
 			Debian)
-				CODE=stretch
+				CODE=buster
 				if [ "$REL" = "unstable" -o "$REL" = "testing" ]; then
-					CODE=buster
+					CODE=bullseye
 				fi
 				echo "Found Debian $REL, using $CODE"
 			;;
