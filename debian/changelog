@@ -1,3 +1,10 @@
+eid-archive (2021.4) meta; urgency=medium
+
+  * debian/postinst: add impish, drop hirsute for Ubuntu 21.10 "Impish
+    Indri"
+
+ -- Wouter Verhelst <wouter@debian.org>  Thu, 21 Oct 2021 15:43:18 +0200
+
 eid-archive (2021.3) meta; urgency=medium
 
   * debian/postinst: Add bullseye, drop stretch, make buster the

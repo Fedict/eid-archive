@@ -19,7 +19,7 @@ case "$CODE" in
 	ulyssa|uma)
 		CODE=ulyana
 	;;
-	buster|bullseye|tara|bionic|focal|ulyana|hirsute)
+	buster|bullseye|tara|bionic|focal|ulyana|impish)
 		:
 	;;
 	*)
