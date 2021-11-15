@@ -20,5 +20,5 @@
 
 # The regular repository with released packages. This is what you should
 # use.
-deb http://files.eid.belgium.be/debian @DIST@ main
-deb http://files2.eid.belgium.be/debian @DIST@ main
+deb https://files.eid.belgium.be/debian @DIST@ main
+deb https://files2.eid.belgium.be/debian @DIST@ main
