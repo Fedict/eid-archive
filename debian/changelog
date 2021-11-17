@@ -1,3 +1,10 @@
+eid-archive (2021.5) meta; urgency=medium
+
+  * eid.list template: switch to https (from http), now that all
+    supported distributions support that.
+
+ -- Wouter Verhelst <wouter@debian.org>  Wed, 17 Nov 2021 12:55:52 +0200
+
 eid-archive (2021.4) meta; urgency=medium
 
   * debian/postinst: add impish, drop hirsute for Ubuntu 21.10 "Impish
