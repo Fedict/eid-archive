@@ -1,3 +1,10 @@
+eid-archive (2021.6) UNRELEASED; urgency=medium
+
+  * Drop files2.eid.belgium.be from configuration. No longer useful, and
+    doesn't support https.
+
+ -- Wouter Verhelst <wouter@debian.org>  Mon, 29 Nov 2021 10:41:32 +0200
+
 eid-archive (2021.5) meta; urgency=medium
 
   * eid.list template: switch to https (from http), now that all

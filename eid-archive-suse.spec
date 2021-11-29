@@ -3,10 +3,10 @@ Name: eid-archive-suse
 Version: 2016
 Release: 2
 License: GPL
-URL: http://eid.belgium.be/
+URL: https://eid.belgium.be/
 
-Source0: http://eid.belgium.be/10a04d46.asc
-Source1: http://eid.belgium.be/6773d225.asc
+Source0: https://files.eid.belgium.be/10a04d46.asc
+Source1: https://files.eid.belgium.be/6773d225.asc
 Source2: eid-archive-suse.repo
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -40,6 +40,11 @@ configuration for zypper.
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
 
 %changelog
+* Mon Nov 29 2021 <wouter.verhelst@fedict.be> - 2021-1
+- Drop files2 repository from .repo file
+- Move files repository from http to https
+- Update all URLs in the .spec file to https, not http
+
 * Tue Jun  7 2016 <wouter.verhelst@fedict.be> - 2016-2
 - Merge mirrors into one repository section
 
