@@ -1,4 +1,4 @@
-eid-archive (2021.6) UNRELEASED; urgency=medium
+eid-archive (2021.6) meta; urgency=medium
 
   * Drop files2.eid.belgium.be from configuration. No longer useful, and
     doesn't support https.
