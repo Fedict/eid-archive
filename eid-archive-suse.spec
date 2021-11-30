@@ -1,7 +1,7 @@
 Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 Name: eid-archive-suse
-Version: 2016
-Release: 2
+Version: 2021
+Release: 1
 License: GPL
 URL: https://eid.belgium.be/
 
