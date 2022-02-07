@@ -1,3 +1,9 @@
+eid-archive (2022.1) meta; urgency=medium
+
+  * debian/postinst: add una as another alias for Linux Mint 20.
+
+ -- Wouter Verhelst <wouter@debian.org>  Mon, 07 Feb 2022 14:07:22 +0200
+
 eid-archive (2021.6) meta; urgency=medium
 
   * Drop files2.eid.belgium.be from configuration. No longer useful, and
