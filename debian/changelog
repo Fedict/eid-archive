@@ -1,3 +1,10 @@
+eid-archive (2022.2) meta; urgency=medium
+
+  * debian/postinst: add Ubuntu 22.04 "Jammy Jellyfish", drop 18.04 "Bionic
+    Beaver".
+
+ -- Wouter Verhelst <wouter@debian.org>  Thu, 28 Apr 2022 13:02:53 +0200
+
 eid-archive (2022.1) meta; urgency=medium
 
   * debian/postinst: add una as another alias for Linux Mint 20.

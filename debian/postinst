@@ -19,7 +19,7 @@ case "$CODE" in
 	ulyssa|uma|una)
 		CODE=ulyana
 	;;
-	buster|bullseye|tara|bionic|focal|ulyana|impish)
+	buster|bullseye|tara|focal|ulyana|jammy)
 		:
 	;;
 	*)
@@ -35,9 +35,9 @@ case "$CODE" in
 				echo "Found Linux Mint $REL, using $CODE"
 			;;
 			Ubuntu)
-				if dpkg --compare-versions 18.04 le $REL
+				if dpkg --compare-versions 20.04 le $REL
 				then
-					CODE=bionic
+					CODE=focal
 				else
 					too_old
 				fi
@@ -51,7 +51,7 @@ case "$CODE" in
 				echo "Found Debian $REL, using $CODE"
 			;;
 			*)
-				CODE=bionic
+				CODE=buster
 				echo "Unknown distribution found. Using $CODE as fallback."
 			;;
 		esac
