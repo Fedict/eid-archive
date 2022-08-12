@@ -16,16 +16,16 @@ case "$CODE" in
 	ulyssa|uma|una)
 		CODE=ulyana
 	;;
-	buster|bullseye|focal|ulyana|jammy)
+	buster|bullseye|focal|ulyana|jammy|vanessa)
 		:
 	;;
 	*)
 		echo -e "WARNING: Unsupported distribution found. Please see the website at\nhttps://eid.belgium.be/en/faq/which-linux-distributions-are-supported#7406\nfor a list of supported distributions."
 		case "$DIST" in
 			LinuxMint)
-				if dpkg --compare-versions 19 le $REL
+				if dpkg --compare-versions 20 le $REL
 				then
-					CODE=tara
+					CODE=ulyana
 				else
 					too_old
 				fi
