@@ -1,3 +1,9 @@
+eid-archive (2022.6) meta; urgency=medium
+
+  * debian/postinst: add alias for Linux Mint 21.1 "vera"
+
+ -- Wouter Verhelst <wouter@debian.org>  Thu, 05 Jan 2023 10:12:35 +0200
+
 eid-archive (2022.5) meta; urgency=medium
 
   * debian/postinst: add Ubuntu 22.10 "kinetic".
