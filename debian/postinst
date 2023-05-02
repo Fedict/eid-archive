@@ -19,7 +19,7 @@ case "$CODE" in
 	vera)
 		CODE=vanessa
 	;;
-	buster|bullseye|focal|ulyana|jammy|kinetic|vanessa)
+	buster|bullseye|focal|ulyana|jammy|vanessa|lunar)
 		:
 	;;
 	*)
