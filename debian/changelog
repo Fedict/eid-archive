@@ -1,3 +1,9 @@
+eid-archive (2023.1) meta; urgency=medium
+
+  * debian/postinst: add Ubuntu 23.04 "lunar lobster"
+
+ -- Wouter Verhelst <wouter@debian.org>  Tue, 02 May 2023 13:07:48 +0200
+
 eid-archive (2022.4) meta; urgency=medium
 
   * debian/postinst: add Linux Mint 21 "vanessa"; bump minimum required
