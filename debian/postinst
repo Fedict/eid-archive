@@ -19,7 +19,7 @@ case "$CODE" in
 	vera)
 		CODE=vanessa
 	;;
-	buster|bullseye|focal|ulyana|jammy|vanessa|lunar)
+	bullseye|bookworm|focal|ulyana|jammy|vanessa|lunar)
 		:
 	;;
 	*)
@@ -44,14 +44,14 @@ case "$CODE" in
 				echo "Found Ubuntu $REL, using $CODE"
 			;;
 			Debian)
-				CODE=buster
+				CODE=bullseye
 				if [ "$REL" = "unstable" -o "$REL" = "testing" ]; then
-					CODE=bullseye
+					CODE=bookworm
 				fi
 				echo "Found Debian $REL, using $CODE"
 			;;
 			*)
-				CODE=buster
+				CODE=bullseye
 				echo "Unknown distribution found. Using $CODE as fallback."
 			;;
 		esac

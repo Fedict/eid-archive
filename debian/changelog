@@ -1,3 +1,10 @@
+eid-archive (2023.2) meta; urgency=medium
+
+  * debian/postinst: Add bookworm, drop buster, make bullseye the
+    fallback Debian version.
+
+ -- Wouter Verhelst <wouter@debian.org>  Mon, 12 Jun 2023 10:43:55 +0200
+
 eid-archive (2023.1) meta; urgency=medium
 
   * debian/postinst: add Ubuntu 23.04 "lunar lobster"
