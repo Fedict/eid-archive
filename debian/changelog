@@ -1,3 +1,9 @@
+eid-archive (2023.3) meta; urgency=medium
+
+  * debian/postinst: add alias for Linux Mint 21.2 "victoria"
+
+ -- Thomas Charlier <tocharl446@gmail.com>  Fri, 04 Aug 2023 09:42:35 +0100
+
 eid-archive (2023.2) meta; urgency=medium
 
   * debian/postinst: Add bookworm, drop buster, make bullseye the

@@ -16,7 +16,7 @@ case "$CODE" in
 	ulyssa|uma|una)
 		CODE=ulyana
 	;;
-	vera)
+	vera|victoria)
 		CODE=vanessa
 	;;
 	bullseye|bookworm|focal|ulyana|jammy|vanessa|lunar)
