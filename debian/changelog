@@ -1,3 +1,9 @@
+eid-archive (2023.4) meta; urgency=medium
+
+  * debian/postinst: add mantic, drop lunar for Ubuntu 23.10 "Mantic Minotaur"
+
+ -- Wouter Verhelst <wouter@debian.org>  Wed, 18 Oct 2023 15:43:18 +0200
+
 eid-archive (2023.3) meta; urgency=medium
 
   * debian/postinst: add alias for Linux Mint 21.2 "victoria"
