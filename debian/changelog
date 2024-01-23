@@ -1,3 +1,9 @@
+eid-archive (2024.1) meta; urgency=medium
+
+  * debian/postinst: add alias for Linux Mint 21.3 "virginia"
+
+ -- Thomas Charlier <tocharl446@gmail.com>  Tue, 23 Jan 2024 11:36:35 +0100
+
 eid-archive (2023.4) meta; urgency=medium
 
   * debian/postinst: add mantic, drop lunar for Ubuntu 23.10 "Mantic Minotaur"
