@@ -1,6 +1,6 @@
 Source: eid-archive
 Section: misc
-Maintainer: Fedict Servicedesk <servicedesk@fedict.be>
+Maintainer: Bosa Dt Servicedesk (BOSA) <servicedesk.dto@bosa.fgov.be>
 Build-Depends: debhelper (>= 9)
 Priority: extra
 Standards-Version: 3.9.5
