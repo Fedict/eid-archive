@@ -19,7 +19,7 @@ case "$CODE" in
 	vera|victoria|virginia)
 		CODE=vanessa
 	;;
-	bullseye|bookworm|focal|ulyana|jammy|vanessa|mantic)
+	bullseye|bookworm|ulyana|jammy|vanessa|nobel)
 		:
 	;;
 	*)
@@ -35,9 +35,9 @@ case "$CODE" in
 				echo "Found Linux Mint $REL, using $CODE"
 			;;
 			Ubuntu)
-				if dpkg --compare-versions 20.04 le $REL
+				if dpkg --compare-versions 22.04 le $REL
 				then
-					CODE=focal
+					CODE=jammy
 				else
 					too_old
 				fi

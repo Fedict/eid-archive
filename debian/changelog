@@ -1,3 +1,9 @@
+eid-archive (2024.2) meta; urgency=medium
+
+  * debian/postinst: add Ubuntu 24.04 "Nobel Numbat", drop 20.04 "Focal Fossa".
+
+ -- Wouter Verhelst <tocharl446@gmail.com>  Thu, 18 Apr 2024 10:08:53 +0100
+
 eid-archive (2024.1) meta; urgency=medium
 
   * debian/postinst: add alias for Linux Mint 21.3 "virginia"
