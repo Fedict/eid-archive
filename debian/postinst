@@ -19,7 +19,7 @@ case "$CODE" in
 	vera|victoria|virginia)
 		CODE=vanessa
 	;;
-	bullseye|bookworm|ulyana|jammy|vanessa|nobel)
+	bullseye|bookworm|ulyana|jammy|vanessa|noble)
 		:
 	;;
 	*)
