@@ -34,6 +34,17 @@ case "$CODE" in
 				fi
 				echo "Found Linux Mint $REL, using $CODE"
 			;;
+			Linuxmint)
+				if [ "$CODE" = "faye" ] ; then
+					if [ "$REL" = "6" ]; then
+						CODE=bookworm
+						echo "Found Linux Mint Debian Edition $REL, using $CODE"
+					else
+						CODE=bullseye
+						echo "Unknown distribution found. Using $CODE as fallback."
+					fi
+				fi
+			;;
 			Ubuntu)
 				if dpkg --compare-versions 22.04 le $REL
 				then
