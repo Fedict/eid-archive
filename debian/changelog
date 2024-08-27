@@ -1,3 +1,10 @@
+eid-archive (2024.3) meta; urgency=medium
+
+  * debian/postinst: add Linux Mint 22 "wilma"; bump minimum required
+    version of Linux Mint to 21. Drop Linux Mint 20 "ulyana" based on Ubuntu 20.04.
+
+ -- Thomas Charlier <tocharl446@gmail.com>  Tue, 27 Aug 2024 10:49:35 +0100
+
 eid-archive (2024.2) meta; urgency=medium
 
   * debian/postinst: add Ubuntu 24.04 "Nobel Numbat", drop 20.04 "Focal Fossa".
