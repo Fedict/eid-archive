@@ -1,3 +1,9 @@
+eid-archive (2024.4) meta; urgency=medium
+
+  * debian/postinst: add Ubuntu 24.10 "oracular".
+
+ -- Thomas Charlier <tocharl446@gmail.com>  Tue, 15 Oct 2024 11:05:35 +0100
+
 eid-archive (2024.3) meta; urgency=medium
 
   * debian/postinst: add Linux Mint 22 "wilma"; bump minimum required
