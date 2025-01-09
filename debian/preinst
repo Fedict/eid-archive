@@ -21,6 +21,9 @@ set -e
 
 too_old() {
 	echo "distribution too old, cannot continue. Please upgrade, or compile from source."
+        if [ "$FORCE_OLD_INSTALL" = "1" ]; then
+                exit 0
+        fi
 	exit 1
 }
 
