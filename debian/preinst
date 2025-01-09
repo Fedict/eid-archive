@@ -41,7 +41,7 @@ case "$VERSION_CODENAME" in
 				else
 					too_old
 				fi
-				echo "Found Linux Mint $VERSION_ID, using $VERSION_CODENAME"
+				echo "Found Linux Mint $VERSION, using $VERSION_CODENAME"
 			;;
 			ubuntu)
 				if dpkg --compare-versions 22.04 le $VERSION_ID
@@ -50,14 +50,22 @@ case "$VERSION_CODENAME" in
 				else
 					too_old
 				fi
-				echo "Found Ubuntu $VERSION_ID, using $VERSION_CODENAME"
+				echo "Found Ubuntu $VERSION, using $VERSION_CODENAME"
 			;;
 			debian)
-				VERSION_CODENAME=bullseye
-				if [ "$VERSION_ID" = "unstable" -o "$VERSION_ID" = "testing" ]; then
-					VERSION_CODENAME=bookworm
-				fi
-				echo "Found Debian $VERSION_ID, using $VERSION_CODENAME"
+                                # On testing and unstable, $VERSION_ID is empty
+                                if [ -z "$VERSION_ID" ]; then
+                                        VERSION=testing/unstable
+                                        VERSION_CODENAME=bookworm
+                                else
+                                        if dpkg --compare-versions 11 le $VERSION_ID
+                                        then
+                                                VERSION_CODENAME=bullseye
+                                        else
+                                                too_old
+                                        fi
+                                fi
+				echo "Found Debian $VERSION, using $VERSION_CODENAME"
 			;;
 			*)
 				VERSION_CODENAME=bullseye
