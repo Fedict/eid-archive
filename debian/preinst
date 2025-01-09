@@ -2,7 +2,7 @@
 
 set -e
 
-# This script does almost, but not quite, the same thing as preinst. The
+# This script does almost, but not quite, the same thing as postinst. The
 # differences are:
 #
 # - preinst errors out when an unsupported situation is encountered,
@@ -17,21 +17,18 @@ set -e
 #
 # Please do not forget to update *both* scripts!
 
-DIR=$(mktemp -d)
-
 . /etc/os-release
 
 too_old() {
 	echo "distribution too old, cannot continue. Please upgrade, or compile from source."
-	exit 0
+	exit 1
 }
 
-# NOTE NOTE NOTE: See the comment above and do not forget to also update preinst
 case "$VERSION_CODENAME" in
 	vera|victoria|virginia)
 		VERSION_CODENAME=vanessa
 	;;
-	bullseye|bookworm|jammy|vanessa|noble|wilma|oracular)
+	bullseye|bookworm|jammy|vanessa|noble|wilma)
 		:
 	;;
 	*)
@@ -69,21 +66,5 @@ case "$VERSION_CODENAME" in
 		esac
 	;;
 esac
-sed -e "s/@DIST@/${VERSION_CODENAME}/g" /usr/share/eid-archive/eid.list > $DIR/eid.list
-ucf $DIR/eid.list /etc/apt/sources.list.d/eid.list
-
-ln -sf /usr/share/eid-archive/keys/6773d225.gpg /etc/apt/trusted.gpg.d/eid-archive-released-builds.gpg
-if grep -E '^[[:space:]]*deb.*(continuous|candidate)' /etc/apt/sources.list.d/eid.list >/dev/null 2>&1
-then
-	ln -sf /usr/share/eid-archive/keys/10a04d46.gpg /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
-else
-	rm -f /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
-fi
-
-if [ -x /usr/sbin/update-software-center ]; then
-	update-software-center --triggered=TRIGGERED
-fi
-
-echo -e "Repository enabled, keys installed. Please run \"apt-get update\" followed by\n\"apt-get install eid-mw eid-viewer\" to install the middleware and the viewer, respectively."
 
 #DEBHELPER#

@@ -7,7 +7,7 @@ Standards-Version: 3.9.5
 
 Package: eid-archive
 Architecture: all
-Depends: gpgv, lsb-release, ucf
+Depends: gpgv, ucf
 Recommends: gnupg
 Breaks: apt (<< 0.7.25.1)
 Description: GnuPG archive keys of the Belgian eID package archive
