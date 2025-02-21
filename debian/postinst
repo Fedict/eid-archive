@@ -31,6 +31,9 @@ case "$VERSION_CODENAME" in
 	vera|victoria|virginia)
 		VERSION_CODENAME=vanessa
 	;;
+	xia)
+		VERSION_CODENAME=wilma
+	;;
 	bullseye|bookworm|jammy|vanessa|noble|wilma|oracular)
 		:
 	;;
