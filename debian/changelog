@@ -1,3 +1,10 @@
+eid-archive (2025.3) meta; urgency=medium
+
+  * debian/preinst/postinst: drop ubuntu 24.10 "oracular", revert change of ubuntu fallback
+    and revert drop of ubuntu 22.04
+
+ -- Thomas Charlier <tocharl446@gmail.com>  Thu, 24 Apr 2025 10:15:35 +0100
+
 eid-archive (2025.2) meta; urgency=medium
 
   * debian/postinst: drop ubuntu 22.04 "jammy", change ubuntu fallback from "jammy" to "noble", 
