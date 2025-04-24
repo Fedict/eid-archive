@@ -34,7 +34,7 @@ case "$VERSION_CODENAME" in
 	xia)
 		VERSION_CODENAME=wilma
 	;;
-	bullseye|bookworm|jammy|vanessa|noble|wilma|oracular)
+	bullseye|bookworm|vanessa|noble|wilma|oracular|plucky)
 		:
 	;;
 	*)
@@ -50,9 +50,9 @@ case "$VERSION_CODENAME" in
 				echo "Found Linux Mint $VERSION, using $VERSION_CODENAME"
 			;;
 			ubuntu)
-				if dpkg --compare-versions 22.04 le $VERSION_ID
+				if dpkg --compare-versions 24.04 le $VERSION_ID
 				then
-					VERSION_CODENAME=jammy
+					VERSION_CODENAME=noble
 				else
 					too_old
 				fi
