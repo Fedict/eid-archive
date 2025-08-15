@@ -8,6 +8,7 @@ URL: https://eid.belgium.be/
 Source0: https://files.eid.belgium.be/10a04d46.asc
 Source1: https://files.eid.belgium.be/6773d225.asc
 Source2: eid-archive-el.repo
+Source3: https://files.eid.belgium.be/67da21a4.asc
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
@@ -20,6 +21,7 @@ configuration for yum.
 %setup -q -c -T
 %{__install} -p -m0644 %{SOURCE0} .
 %{__install} -p -m0644 %{SOURCE1} .
+%{__install} -p -m0644 %{SOURCE3} .
 
 %build
 
@@ -29,6 +31,7 @@ configuration for yum.
 %{__install} -Dp -m0644 %{SOURCE0} %{buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS
 %{__install} -Dp -m0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
 %{__install} -Dp -m0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/yum.repos.d/eid-archive.repo
+%{__install} -Dp -m0644 %{SOURCE3} %{buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE-2025
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -38,8 +41,13 @@ configuration for yum.
 %config(noreplace) /etc/yum.repos.d/eid-archive.repo
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
+/etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE-2025
 
 %changelog
+* Mon Aug 15 2025 <wouter.verhelst@zetes.com> - 2025-1
+- Add new 2025 key, will start to be used a few months from now, but do
+  it now to allow for a reasonable key rollover
+
 * Mon Nov 29 2021 <wouter.verhelst@zetes.com> - 2021-1
 - Retire files2 repository from .repo file
 - Move files repository from http to https

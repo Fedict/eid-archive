@@ -1,0 +1,20 @@
+URIs: https://files.eid.belgium.be/debian
+Components: main
+Types: deb deb-src
+Suites: @DIST@
+Enabled: yes
+Signed-By: /usr/share/eid-archive/keys/released.gpg
+
+URIs: https://files.eid.belgium.be/debian
+Components: main
+Types: deb deb-src
+Suites: candidate/@DIST@
+Enabled: no
+Signed-By: /usr/share/eid-archive/keys/develop.gpg
+
+URIs: https://files.eid.belgium.be/debian
+Components: main
+Types: deb deb-src
+Suites: continuous/@DIST@
+Enabled: no
+Signed-By: /usr/share/eid-archive/keys/develop.gpg

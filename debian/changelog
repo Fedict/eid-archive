@@ -1,3 +1,18 @@
+eid-archive (2025.4) meta; urgency=medium
+
+  * debian/postinst, debian/preinst:
+    - rework to use eid.sources instead of eid.list
+    - add Debian 13 "trixie", drop Debian 11 "bullseye"
+  * 67da21a4.asc: add, newly generated key
+    - NIST P-384 instead of RSA
+    - No more SHA1 signatures
+    - Should be future-proof for a while
+    - Will not be used immediately, to allow for rollover
+  * debian/rules: remove generation of 6773d225.gpg and 10a04d46.gpg, replace
+    by "develop" and "released" keyrings instead
+
+ -- Wouter Verhelst <wouter@debian.org>  Fri, 15 Aug 2025 14:36:45 +0200
+
 eid-archive (2025.3) meta; urgency=medium
 
   * debian/preinst/postinst: drop ubuntu 24.10 "oracular", revert change of ubuntu fallback

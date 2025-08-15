@@ -27,32 +27,57 @@ too_old() {
 }
 
 # NOTE NOTE NOTE: See the comment above and do not forget to also update preinst
+
+MINT_OLDSTABLE=vanessa
+MINT_OLDSTABLE_VERSION=21
+MINT_OLDSTABLE_ALIASES="vera|victoria|virginia|vanessa"
+MINT_STABLE=wilma
+MINT_STABLE_ALIASES="wilma|xia"
+DEBIAN_OLDSTABLE=bookworm
+DEBIAN_OLDSTABLE_VERSION=12
+DEBIAN_STABLE=trixie
+UBUNTU_OLDLTS=jammy
+UBUNTU_OLDLTS_VERSION=22.04
+UBUNTU_LTS=noble
+UBUNTU_STABLE=plucky
+
+## DO NOT change anything beyond this point
+
+PLAIN_SUPPORTED="$DEBIAN_OLDSTABLE|$DEBIAN_STABLE|$UBUNTU_OLDLTS|$UBUNTU_LTS"
+
+if [ ! -z "$UBUNTU_STABLE" ]; then
+        PLAIN_SUPPORTED="$PLAIN_SUPPORTED|$UBUNTU_STABLE"
+fi
+
 case "$VERSION_CODENAME" in
-	vera|victoria|virginia)
-		VERSION_CODENAME=vanessa
+	$MINT_OLDSTABLE_ALIASES)
+		VERSION_CODENAME=$MINT_OLDSTABLE
 	;;
-	xia)
-		VERSION_CODENAME=wilma
+	$MINT_STABLE_ALIASES)
+		VERSION_CODENAME=$MINT_STABLE
 	;;
-	bullseye|bookworm|jammy|vanessa|noble|wilma|plucky)
+        $MINT_STABLE_ALIASES)
+                VERSION_CODENAME=$MINT_STABLE
+        ;;
+	$PLAIN_SUPPORTED)
 		:
 	;;
 	*)
 		echo -e "WARNING: Unsupported distribution found. Please see the website at\nhttps://eid.belgium.be/en/faq/which-linux-distributions-are-supported#7406\nfor a list of supported distributions."
 		case "$ID" in
 			linuxmint)
-				if dpkg --compare-versions 21 le $VERSION_ID
+				if dpkg --compare-versions $MINT_OLDSTABLE_VERSION le $VERSION_ID
 				then
-					VERSION_CODENAME=vanessa
+					VERSION_CODENAME=$MINT_OLDSTABLE
 				else
 					too_old
 				fi
 				echo "Found Linux Mint $VERSION, using $VERSION_CODENAME"
 			;;
 			ubuntu)
-				if dpkg --compare-versions 22.04 le $VERSION_ID
+				if dpkg --compare-versions $UBUNTU_OLDLTS_VERSION le $VERSION_ID
 				then
-					VERSION_CODENAME=jammy
+					VERSION_CODENAME=$UBUNTU_OLDLTS
 				else
 					too_old
 				fi
@@ -62,11 +87,11 @@ case "$VERSION_CODENAME" in
                                 # On testing and unstable, $VERSION_ID is empty
 				if [ -z "$VERSION_ID" ]; then
                                         VERSION=testing/unstable
-					VERSION_CODENAME=bookworm
+					VERSION_CODENAME=$DEBIAN_STABLE
                                 else
-                                        if dpkg --compare-versions 11 le $VERSION_ID
+                                        if dpkg --compare-versions $DEBIAN_OLDSTABLE_VERSION le $VERSION_ID
                                         then
-                                                VERSION_CODENAME=bullseye
+                                                VERSION_CODENAME=$DEBIAN_OLDSTABLE
                                         else
                                                 too_old
                                         fi
@@ -74,22 +99,14 @@ case "$VERSION_CODENAME" in
 				echo "Found Debian $VERSION, using $VERSION_CODENAME"
 			;;
 			*)
-				VERSION_CODENAME=bullseye
+				VERSION_CODENAME=$DEBIAN_OLDSTABLE
 				echo "Unknown distribution found. Using $VERSION_CODENAME as fallback."
 			;;
 		esac
 	;;
 esac
-sed -e "s/@DIST@/${VERSION_CODENAME}/g" /usr/share/eid-archive/eid.list > $DIR/eid.list
-ucf $DIR/eid.list /etc/apt/sources.list.d/eid.list
-
-ln -sf /usr/share/eid-archive/keys/6773d225.gpg /etc/apt/trusted.gpg.d/eid-archive-released-builds.gpg
-if grep -E '^[[:space:]]*deb.*(continuous|candidate)' /etc/apt/sources.list.d/eid.list >/dev/null 2>&1
-then
-	ln -sf /usr/share/eid-archive/keys/10a04d46.gpg /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
-else
-	rm -f /etc/apt/trusted.gpg.d/eid-archive-test-builds.gpg
-fi
+sed -e "s/@DIST@/${VERSION_CODENAME}/g" /usr/share/eid-archive/eid.sources > $DIR/eid.sources
+ucf $DIR/eid.sources /etc/apt/sources.list.d/eid.sources
 
 if [ -x /usr/sbin/update-software-center ]; then
 	update-software-center --triggered=TRIGGERED
