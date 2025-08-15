@@ -33,7 +33,7 @@ foreach my $file(@ARGV) {
                         system("rpmsign", "--resign", "--key-id=" . $ENV{GPG_SIGN_KEY_ID}, $target);
                         chdir($targetdir);
                         chdir("../..");
-                        system("createrepo", ".");
+                        system("createrepo_c", ".");
                         if($dist eq "suse") {
                                 chdir("repodata");
                                 system("gpg", "--yes", "--batch", "--passphrase", "", "--default-key", $ENV{GPG_SIGN_KEY_ID}, "--no-tty", "-b", "--armor", "repomd.xml");
