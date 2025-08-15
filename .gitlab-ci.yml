@@ -1,21 +1,21 @@
 ---
 variables:
-  DEBIAN_OLDSTABLE_CODE: stretch
-  DEBIAN_OLDSTABLE_VERSION: 9
-  STRETCH_FULLNAME: Debian 9 "stretch"
-  DEBIAN_STABLE_CODE: buster
-  DEBIAN_STABLE_VERSION: 10
-  BUSTER_FULLNAME: Debian 10 "buster"
-  UBUNTU_OLDLTS_CODE: xenial
-  UBUNTU_OLDLTS_VERSION: 1604
-  XENIAL_FULLNAME: Xenial Xerus
+  DEBIAN_OLDSTABLE_CODE: bookworm
+  DEBIAN_OLDSTABLE_VERSION: 12
+  BOOKWORM_FULLNAME: Debian 12 "bookworm"
+  DEBIAN_STABLE_CODE: trixie
+  DEBIAN_STABLE_VERSION: 13
+  TRIXIE_FULLNAME: Debian 13 "trixie"
+  UBUNTU_OLDLTS_CODE: jammy
+  UBUNTU_OLDLTS_VERSION: 2204
+  JAMMY_FULLNAME: Jammy Jellyfish
   MINT_OLDLTS_CODE: sara
   SARA_FULLNAME: Sara
-  UBUNTU_LTS_CODE: bionic
-  UBUNTU_LTS_VERSION: 1804
-  BIONIC_FULLNAME: Bionic Beaver
-  MINT_LTS_CODE: tara
-  TARA_FULLNAME: Tara
+  UBUNTU_LTS_CODE: noble
+  UBUNTU_LTS_VERSION: 2404
+  NOBLE_FULLNAME: Bionic Beaver
+  MINT_LTS_CODE: vanessa
+  VANESSA_FULLNAME: VANESSA
   UBUNTU_STABLE_CODE: eoan
   UBUNTU_STABLE_VERSION: 1910
   EOAN_FULLNAME: Eoan Ermine
@@ -52,8 +52,8 @@ sign-deb:
   stage: sign
   tags:
   - repobuilder
-  only:
-  - gitlab
+  rules:
+    - when: manual
   script:
   - set -e
   - if [ -z "$REPREPRO_BASE_DIR"]; then export REPREPRO_BASE_DIR=/srv/repo/reprepro; fi
@@ -66,8 +66,8 @@ sign-fed:
   stage: sign
   tags:
   - repobuilder
-  only:
-  - gitlab
+  rules:
+    - when: manual
   script:
   - set -e
   - for rpm in products/rpm/*.rpm; do ./scripts/rpm-sign-and-move.pl $rpm; done
