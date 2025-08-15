@@ -30,13 +30,13 @@ foreach my $file(@ARGV) {
                         next if (-f $target);
                         make_path($targetdir);
                         move($file, $target);
-                        system("rpmsign", "--resign", "--key-id=" . $ENV{GPG_KEY_ID}, $target);
+                        system("rpmsign", "--resign", "--key-id=" . $ENV{GPG_SIGN_KEY_ID}, $target);
                         chdir($targetdir);
                         chdir("../..");
                         system("createrepo", ".");
                         if($dist eq "suse") {
                                 chdir("repodata");
-                                system("gpg", "--yes", "--batch", "--passphrase", "", "--default-key", $ENV{GPG_KEY_ID}, "--no-tty", "-b", "--armor", "repomd.xml");
+                                system("gpg", "--yes", "--batch", "--passphrase", "", "--default-key", $ENV{GPG_SIGN_KEY_ID}, "--no-tty", "-b", "--armor", "repomd.xml");
                         }
                         chdir($builddir);
                 }

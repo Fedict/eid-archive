@@ -15,7 +15,7 @@ if(exists($ENV{REPREPRO_BASE_DIR})) {
 }
 my $dist = Reprepro::Distribution->new("$basedir/conf/distributions");
 
-my $key = $ENV{GPG_KEY_ID};
+my $key = $ENV{GPG_SIGN_KEY_ID};
 my $testkey = $key;
 if(exists($ENV{GPG_TEST_KEY_ID})) {
 	$testkey = $ENV{GPG_TEST_KEY_ID};
