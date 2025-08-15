@@ -43,7 +43,7 @@ configuration for yum.
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE-2025
 
 %changelog
-* Mon Aug 15 2025 <wouter.verhelst@zetes.com> - 2025-1
+* Fri Aug 15 2025 <wouter.verhelst@zetes.com> - 2025-1
 - Add new 2025 key, will start to be used a few months from now, but do
   it now to allow for a reasonable key rollover
 
