@@ -5,15 +5,18 @@
 
 override_dh_auto_build:
 
-override_dh_install: 10a04d46.gpg 6773d225.gpg
+override_dh_install: released.gpg develop.gpg
 	dh_install
 
 override_dh_auto_clean:
-	rm -f 10a04d46.gpg 6773d225.gpg
+	rm -f *.gpg
 	dh_auto_clean
 
 override_dh_builddeb:
 	dh_builddeb -- --no-uniform-compression
 
-%.gpg: %.asc
-	gpg --dearmor < $< > $@
+released.gpg: 6773d225.asc 67da21a4.asc
+	gpg --no-default-keyring --keyring $@ --import $^
+
+develop.gpg: 10a04d46.asc
+	gpg --no-default-keyring --keyring $@ --import $^
