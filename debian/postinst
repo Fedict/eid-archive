@@ -116,6 +116,7 @@ if [ "$1" == "configure" -a ! -z "$2" ]; then
                 echo "Upgrading from old (pre-2025.4) version, deleting old config"
                 ucf --purge /etc/apt/sources.list.d/eid.list
                 rm -f /etc/apt/sources.list.d/eid.list
+                rm -f /etc/apt/trusted.gpg.d/eid-archive*
         fi
 fi
 
