@@ -25,27 +25,3 @@ build:
   artifacts:
     paths:
     - products
-
-sign-deb:
-  stage: sign
-  tags:
-  - repobuilder
-  rules:
-    - when: manual
-  script:
-  - set -e
-  - if [ -z "$REPREPRO_BASE_DIR"]; then export REPREPRO_BASE_DIR=/srv/repo/reprepro; fi
-  - ./scripts/ensure-reprepro.pl
-  - for deb in products/deb/*.changes; do if ./scripts/deb-is-needed.pl $deb; then dcmd mv $deb /srv/repo/reprepro/incoming; fi; done
-  - reprepro processincoming incoming
-  - for deb in products/deb/*.changes; do ./scripts/deb-copy-if-needed.pl $deb; done
-
-sign-fed:
-  stage: sign
-  tags:
-  - repobuilder
-  rules:
-    - when: manual
-  script:
-  - set -e
-  - for rpm in products/rpm/*.rpm; do ./scripts/rpm-sign-and-move.pl $rpm; done
