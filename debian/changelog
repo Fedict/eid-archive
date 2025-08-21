@@ -1,3 +1,9 @@
+eid-archive (2025.5) meta; urgency=medium
+
+  * debian/rules: fix build of released.gpg and develop.gpg.
+
+ -- Wouter Verhelst <wouter@debian.org>  Thu, 21 Aug 2025 10:27:19 +0200
+
 eid-archive (2025.4) meta; urgency=medium
 
   * debian/postinst, debian/preinst:
