@@ -16,7 +16,9 @@ override_dh_builddeb:
 	dh_builddeb -- --no-uniform-compression
 
 released.gpg: 6773d225.asc 67da21a4.asc
-	gpg --no-default-keyring --keyring ./$@ --import $^
+	gpg --dearmor < 6773d225.asc > 6773d225.gpg
+	gpg --dearmor < 67da21a4.asc > 67da21a4.gpg
+	cat 6773d225.gpg 67da21a4.gpg > released.gpg
 
 develop.gpg: 10a04d46.asc
-	gpg --no-default-keyring --keyring ./$@ --import $^
+	gpg --dearmor < 10a04d46.asc > develop.gpg
