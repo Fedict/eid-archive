@@ -2,7 +2,7 @@
 name=Belgian eID package archive
 baseurl=https://files.eid.belgium.be/rpm/fedora/$releasever
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE-2025
 enabled=1
 
 [beid-continuous]
