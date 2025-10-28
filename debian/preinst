@@ -41,7 +41,7 @@ DEBIAN_STABLE=trixie
 UBUNTU_OLDLTS=jammy
 UBUNTU_OLDLTS_VERSION=22.04
 UBUNTU_LTS=noble
-UBUNTU_STABLE=plucky
+UBUNTU_STABLE=questing
 
 ## DO NOT change anything beyond this point
 
