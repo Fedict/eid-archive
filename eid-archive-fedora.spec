@@ -1,7 +1,7 @@
 Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 Name: eid-archive-fedora
 Version: 2025
-Release: 1
+Release: 2
 License: GPL
 URL: https://eid.belgium.be/
 
@@ -43,6 +43,10 @@ configuration for yum.
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE-2025
 
 %changelog
+* Tue Oct 28 2025 <wouter.verhelst@zetes.com> - 2025-2
+- Update .repo files to point to the new key in addition to the old key, and
+  fix incorrect copy of the old key to the filename of the new one
+
 * Fri Aug 15 2025 <wouter.verhelst@zetes.com> - 2025-1
 - Add new 2025 key, will start to be used a few months from now, but do
   it now to allow for a reasonable key rollover

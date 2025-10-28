@@ -1,3 +1,10 @@
+eid-archive (2025.6) meta; urgency=medium
+
+  * debian/postinst: drop ubuntu 25.04 "Plucky Puffin", add 25.10 "Questing
+    Quokka"
+
+ -- Wouter Verhelst <wouter@debian.org>  Tue, 28 Oct 2025 17:38:23 +0200
+
 eid-archive (2025.5) meta; urgency=medium
 
   * debian/rules: fix build of released.gpg and develop.gpg.
