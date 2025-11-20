@@ -1,3 +1,9 @@
+eid-archive (2025.7) meta; urgency=medium
+
+  * debian/postinst, debian/preinst: add alias for Linux Mint 22.2 "zara".
+
+ -- Thomas Charlier <tocharl446@gmail.com>  Thu, 20 Nov 2025 09:51:35 +0100
+
 eid-archive (2025.6) meta; urgency=medium
 
   * debian/postinst: drop ubuntu 25.04 "Plucky Puffin", add 25.10 "Questing
