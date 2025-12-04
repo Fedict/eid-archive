@@ -10,7 +10,7 @@ enabled=1
 name=Belgian eID package archive - unsupported prerelease builds (continuous)
 baseurl=https://files.eid.belgium.be/rpm/continuous/opensuse/$releasever
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS-2025
 autorefresh=0
 enabled=0
 
@@ -18,6 +18,6 @@ enabled=0
 name=Belgian eID package archive - unsupported prerelease builds (candidate)
 baseurl=https://files.eid.belgium.be/rpm/candidate/opensuse/$releasever
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS-2025
 autorefresh=0
 enabled=0

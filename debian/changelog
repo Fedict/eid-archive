@@ -1,3 +1,9 @@
+eid-archive (2025.8) UNRELEASED; urgency=medium
+
+  * debian/rules: add new continuous key (09089348)
+
+ -- Wouter Verhelst <wouter@debian.org>  Thu, 04 Dec 2025 15:32:15 +0200
+
 eid-archive (2025.7) meta; urgency=medium
 
   * debian/postinst, debian/preinst: add alias for Linux Mint 22.2 "zara".

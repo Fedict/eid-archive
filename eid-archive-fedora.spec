@@ -1,14 +1,15 @@
 Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 Name: eid-archive-fedora
 Version: 2025
-Release: 2
+Release: 3
 License: GPL
 URL: https://eid.belgium.be/
 
-Source0: https://eid.belgium.be/10a04d46.asc
-Source1: https://eid.belgium.be/6773d225.asc
+Source0: https://files.eid.belgium.be/10a04d46.asc
+Source1: https://files.eid.belgium.be/6773d225.asc
 Source2: eid-archive-fedora.repo
-Source3: https://eid.belgium.be/67da21a4.asc
+Source3: https://files.eid.belgium.be/67da21a4.asc
+Source4: https://files.eid.belgium.be/09089348.asc
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
@@ -31,6 +32,7 @@ configuration for yum.
 %{__install} -Dp -m0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
 %{__install} -Dp -m0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/yum.repos.d/eid-archive.repo
 %{__install} -Dp -m0644 %{SOURCE3} %{buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE-2025
+%{__install} -Dp -m0644 %{SOURCE4} %{buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS-2025
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -43,6 +45,9 @@ configuration for yum.
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE-2025
 
 %changelog
+* Thu Dec 04 2025 <wouter.verhelst@zetes.com> - 2025-3
+- Add new continuous key to all specfiles
+
 * Tue Oct 28 2025 <wouter.verhelst@zetes.com> - 2025-2
 - Update .repo files to point to the new key in addition to the old key, and
   fix incorrect copy of the old key to the filename of the new one

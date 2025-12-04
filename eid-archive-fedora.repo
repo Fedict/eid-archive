@@ -9,12 +9,12 @@ enabled=1
 name=Belgian eID package archive - unsupported prerelease builds (continuous)
 baseurl=https://files.eid.belgium.be/rpm/continuous/fedora/$releasever
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS-2025
 enabled=0
 
 [beid-candidate]
 name=Belgian eID package archive - unsupported prerelease builds (candidate)
 baseurl=https://files.eid.belgium.be/rpm/candidate/fedora/$releasever
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS file:///etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS-2025
 enabled=0

@@ -20,5 +20,7 @@ released.gpg: 6773d225.asc 67da21a4.asc
 	gpg --dearmor < 67da21a4.asc > 67da21a4.gpg
 	cat 6773d225.gpg 67da21a4.gpg > released.gpg
 
-develop.gpg: 10a04d46.asc
-	gpg --dearmor < 10a04d46.asc > develop.gpg
+develop.gpg: 10a04d46.asc 09089348.asc
+	gpg --dearmor < 10a04d46.asc > 10a04d46.gpg
+	gpg --dearmor < 09089348.asc > 09089348.gpg
+	cat 10a04d46.gpg 09089348.gpg > develop.gpg
