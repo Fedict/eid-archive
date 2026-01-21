@@ -41,6 +41,7 @@ configuration for yum.
 %defattr(-, root, root, 0755)
 %config(noreplace) /etc/yum.repos.d/eid-archive.repo
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS
+/etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS-2025
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE-2025
 
