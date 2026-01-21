@@ -1,6 +1,7 @@
-eid-archive (2025.8) UNRELEASED; urgency=medium
+eid-archive (2026.1) meta; urgency=medium
 
   * debian/rules: add new continuous key (09089348)
+  * eid.sources: drop "candidate" repository. No longer actively used.
 
  -- Wouter Verhelst <wouter@debian.org>  Thu, 04 Dec 2025 15:32:15 +0200
 
