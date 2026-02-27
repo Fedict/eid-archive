@@ -1,3 +1,9 @@
+eid-archive (2026.2) meta; urgency=medium
+
+  * debian/postinst, debian/preinst: add alias for Linux Mint 22.3 "zena".
+
+ -- Thomas Charlier <tocharl446@gmail.com>  Fri, 27 Feb 2026 09:24:15 +0100
+
 eid-archive (2026.1) meta; urgency=medium
 
   * debian/rules: add new continuous key (09089348)
