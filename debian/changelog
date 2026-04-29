@@ -1,4 +1,11 @@
-eid-archive (2026.2) meta; urgency=medium
+eid-archive (2026.3) meta; urgency=medium
+
+  * debian/postinst, debian/preinst: drop ubuntu 22.04 "jammy", drop ubuntu
+    25.10 "questing", add ubuntu 26.04 "resolute"
+
+ -- Thomas Charlier <tocharl446@gmail.com>  Wed, 29 Apr 2026 09:58:15 +0100
+ 
+ eid-archive (2026.2) meta; urgency=medium
 
   * debian/postinst, debian/preinst: add alias for Linux Mint 22.3 "zena".
 
