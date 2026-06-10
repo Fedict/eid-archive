@@ -1,7 +1,7 @@
 Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 Name: eid-archive-fedora
-Version: 2025
-Release: 3
+Version: 2026
+Release: 1
 License: GPL
 URL: https://eid.belgium.be/
 
