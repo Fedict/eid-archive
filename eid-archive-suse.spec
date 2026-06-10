@@ -1,12 +1,10 @@
 Summary: GnuPG archive keys and configuration of the Belgian eID package archive
 Name: eid-archive-suse
 Version: 2026
-Release: 1
+Release: 2
 License: GPL
 URL: https://eid.belgium.be/
 
-Source0: https://files.eid.belgium.be/10a04d46.asc
-Source1: https://files.eid.belgium.be/6773d225.asc
 Source2: eid-archive-suse.repo
 Source3: https://files.eid.belgium.be/67da21a4.asc
 Source4: https://files.eid.belgium.be/09089348.asc
@@ -20,17 +18,14 @@ configuration for zypper.
 
 %prep
 %setup -q -c -T
-%{__install} -p -m0644 %{SOURCE0} .
-%{__install} -p -m0644 %{SOURCE1} .
 %{__install} -p -m0644 %{SOURCE3} .
+%{__install} -p -m0644 %{SOURCE4} .
 
 %build
 
 %install
 %{__rm} -rf %{buildroot}
 
-%{__install} -Dp -m0644 %{SOURCE0} %{buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS
-%{__install} -Dp -m0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
 %{__install} -Dp -m0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/zypp/repos.d/eid-archive.repo
 %{__install} -Dp -m0644 %{SOURCE3} %{buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE-2025
 %{__install} -Dp -m0644 %{SOURCE4} %{buildroot}%{_sysconfdir}/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS-2025
@@ -41,9 +36,7 @@ configuration for zypper.
 %files
 %defattr(-, root, root, 0755)
 %config(noreplace) /etc/zypp/repos.d/eid-archive.repo
-/etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-CONTINUOUS-2025
-/etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE
 /etc/pki/rpm-gpg/RPM-GPG-KEY-BEID-RELEASE-2025
 
 %changelog
